@@ -14,12 +14,12 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: "Nate Kim Dev Log" # the main title
+title: "태희의 커밋로그" # the main title
 
-tagline: "AI-assisted blogging, automation, and build-in-public notes" # it will display as the subtitle
+tagline: "AI 블로그 자동화 프로젝트를 차근차근 커밋하는 기록" # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Project AI Autoblog 구축 과정을 기록하는 한국어 개발자 블로그입니다.
+  AI-assisted blogging, 자동화, SEO, GitHub Pages 실험을 기록하는 태희의 개발 로그입니다.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -98,7 +98,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: /assets/img/avatar.png
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
