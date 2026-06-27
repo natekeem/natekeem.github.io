@@ -14,12 +14,12 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: "나태희의 커밋로그" # the main title
+title: "나태킴의 커밋로그" # the main title
 
 tagline: "AI 블로그 자동화 프로젝트를 차근차근 커밋하는 기록" # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  AI-assisted blogging, 자동화, SEO, GitHub Pages 실험을 기록하는 나태희의 개발 로그입니다.
+  AI-assisted blogging, 자동화, SEO, GitHub Pages 실험을 기록하는 나태킴의 개발 로그입니다.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -34,7 +34,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: 나태희
+  name: "나태킴"
   email: # change to your email address
   fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
   links:
