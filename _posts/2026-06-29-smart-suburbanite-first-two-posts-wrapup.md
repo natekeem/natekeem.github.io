@@ -1,5 +1,6 @@
 ---
 title: "수익형 블로그 1호에 글 2개를 발행했다: 자동화보다 먼저 검수 흐름을 검증했다"
+date: 2026-06-29 09:00:00 +0900
 categories:
   - Project AI Autoblog
   - Dev Log
@@ -11,7 +12,10 @@ tags:
   - Human Review
   - Dev Log
 description: "The Smart Suburbanite에 첫 두 개의 영어 글을 발행하면서, 자동화보다 먼저 검수 흐름과 배포 문제를 검증한 기록."
-published: false
+published: true
+image:
+  path: /assets/img/posts/2026-06-29-smart-suburbanite-first-two-posts-wrapup/cover.png
+  alt: "첫 두 개의 The Smart Suburbanite 글과 검수 체크리스트, RSS 및 이미지 이슈를 정리한 프로젝트 워크플로 보드"
 ---
 
 # 수익형 블로그 1호에 글 2개를 발행했다: 자동화보다 먼저 검수 흐름을 검증했다
