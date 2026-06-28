@@ -1,6 +1,6 @@
 ---
 title: "수익형 블로그 1호에 글 2개를 발행했다: 자동화보다 먼저 검수 흐름을 검증했다"
-date: 2026-06-29 09:00:00 +0900
+date: 2026-06-29 02:08:36 +0900
 categories:
   - Project AI Autoblog
   - Dev Log
