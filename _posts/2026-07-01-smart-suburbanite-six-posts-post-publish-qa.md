@@ -1,5 +1,6 @@
 ---
 title: "수익형 블로그 글 6개를 발행하며 발행 후 QA의 중요성을 배웠다"
+date: 2026-07-01 08:34:40 +0900
 categories:
   - Project AI Autoblog
   - Dev Log
@@ -10,8 +11,8 @@ tags:
   - Workflow
   - QA
   - Dev Log
-description: "The Smart Suburbanite에 글 6개를 발행한 뒤, AI 초안 작성보다 발행 후 QA와 운영 점검이 더 중요해졌다는 점을 정리한 Dev Blog 초안."
-published: false
+description: "The Smart Suburbanite에 글 6개를 발행한 뒤, AI 초안 작성보다 발행 후 QA와 운영 점검이 더 중요해졌다는 점을 정리한 Dev Blog 기록."
+published: true
 ---
 
 ## 글 6개가 되면서 보인 것
