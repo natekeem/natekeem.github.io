@@ -1,5 +1,6 @@
 ---
-title: "?섏씡??釉붾줈洹?湲 4媛쒕? 諛쒗뻾?섎ŉ 諛곗슫 寃? AI 湲?곌린蹂대떎 QA 泥댄겕由ъ뒪?멸? 癒쇱????"
+title: "수익형 블로그 글 4개를 발행하며 배운 것: AI 글쓰기보다 QA 체크리스트가 먼저였다"
+date: 2026-06-30 09:00:00 +0900
 categories:
   - Project AI Autoblog
   - Dev Log
@@ -11,11 +12,14 @@ tags:
   - Human Review
   - QA
   - Dev Log
-description: "The Smart Suburbanite에 공개 글 4개를 발행하면서, AI 글쓰기보다 발행 전후 QA checklist와 사람 승인 구조가 먼저 필요하다는 점을 정리한 Dev Blog 초안."
-published: false
+description: "The Smart Suburbanite에 공개 글 4개를 발행하면서, AI 글쓰기보다 발행 전후 QA checklist와 사람 승인 구조가 먼저 필요하다는 점을 정리한 Dev Blog 기록."
+published: true
+image:
+  path: /assets/img/posts/2026-06-30-smart-suburbanite-four-posts-qa-workflow/cover.png
+  alt: "The Smart Suburbanite 첫 네 편의 글을 QA checklist 보드로 정리하고 YAML, RSS, pubDatetime, UTF-8, cover, social link 이슈를 표시한 Dev Blog cover concept"
 ---
 
-# ?섏씡??釉붾줈洹?湲 4媛쒕? 諛쒗뻾?섎ŉ 諛곗슫 寃? AI 湲?곌린蹂대떎 QA 泥댄겕由ъ뒪?멸? 癒쇱????
+# 수익형 블로그 글 4개를 발행하며 배운 것: AI 글쓰기보다 QA 체크리스트가 먼저였다
 
 ## 시작하며
 
