@@ -1,5 +1,5 @@
 ---
-title: "Project AI Autoblog 시작기: 완전 자동화보다 먼저 HQ 워크스페이스를 만든 이유"
+title: "Project AI Autoblog를 시작하며 HQ 워크스페이스부터 만든 이유"
 date: 2026-06-27 09:00:00 +0900
 categories:
   - Project AI Autoblog
