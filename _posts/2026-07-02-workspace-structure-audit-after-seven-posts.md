@@ -1,5 +1,5 @@
 ---
-title: "글이 쌓이자 워크스페이스 지도부터 다시 그렸다"
+title: "폴더가 헷갈리기 시작해서 워크스페이스 지도를 만들었다"
 date: 2026-07-02 02:40:34 +0900
 categories:
   - Project AI Autoblog
@@ -19,7 +19,7 @@ image:
   alt: "Project AI Autoblog의 docs, prompts, content_lab, Dev Blog, monetized_blogs, QA 흐름을 정리한 워크스페이스 운영 지도"
 ---
 
-# 글이 쌓이자 워크스페이스 지도부터 다시 그렸다
+# 폴더가 헷갈리기 시작해서 워크스페이스 지도를 만들었다
 
 ## 이번에는 글보다 작업 공간을 먼저 봤다
 
@@ -30,6 +30,8 @@ The Smart Suburbanite에 공개 글이 7개까지 쌓이면서 문제는 글감 
 처음에는 AI가 글을 얼마나 잘 쓰는지가 중심 질문처럼 보였다. 그런데 몇 편을 실제로 발행해 보니 글쓰기만 따로 떨어져 있지 않았다. topic, draft, review, image, publish, QA, RSS, browser freshness, internal links, deploy, tracking docs가 이어져야 한 편의 글이 운영 흐름 안에 들어온다.
 
 글이 늘어나면 글 목록보다 먼저 작업 지도가 필요해진다. 이번 정리는 그 사실을 확인한 작업에 가까웠다.
+
+이번 글의 중심은 몇 번째 글을 발행했는지가 아니라, 다음 작업자가 길을 잃지 않도록 워크스페이스 지도를 다시 그린 일이다.
 
 ## Article 007에서 발행 후 복구가 필요했다
 

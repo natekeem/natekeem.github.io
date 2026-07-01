@@ -1,5 +1,5 @@
 ---
-title: "수익형 블로그 1호에 글 2개를 발행하며 검수 흐름을 먼저 검증했다"
+title: "첫 수익형 블로그에서 검수 흐름을 먼저 시험했다"
 date: 2026-06-29 02:08:36 +0900
 categories:
   - Project AI Autoblog
@@ -18,7 +18,7 @@ image:
   alt: "첫 두 개의 The Smart Suburbanite 글과 검수 체크리스트, RSS 및 이미지 이슈를 정리한 프로젝트 워크플로 보드"
 ---
 
-# 수익형 블로그 1호에 글 2개를 발행하며 검수 흐름을 먼저 검증했다
+# 첫 수익형 블로그에서 검수 흐름을 먼저 시험했다
 
 ## 이번에 한 일
 
@@ -35,6 +35,8 @@ The Smart Suburbanite 사이트에 첫 두 글을 발행했다.
 이번 목표는 "AI로 글을 많이 찍어내는 것"이 아니었다.
 
 정말 확인하고 싶었던 것은 AI가 만든 영어 글을 한국어 검수 흐름으로 안전하게 발행할 수 있는지였다. 영어 원문 전체를 매번 처음부터 끝까지 감수하는 방식은 오래가기 어렵다. 대신 사람이 판단해야 하는 지점을 한국어로 압축해서 보고, 위험한 주장과 발행 판단을 따로 확인하는 흐름을 만들고 싶었다.
+
+성과를 말하려는 글이 아니라, 첫 proof blog에서 review와 publish의 기본 동선이 실제로 굴러가는지 확인한 기록에 가깝다.
 
 그래서 글 하나마다 brief, English draft, Korean review packet, claim/fact table, review card, draft article file, cover image, final publish card, publish, post-publish verification 순서로 진행했다.
 
