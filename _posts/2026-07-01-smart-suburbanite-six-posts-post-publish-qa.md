@@ -13,17 +13,24 @@ tags:
   - Dev Log
 description: "The Smart Suburbanite에 글 6개를 발행한 뒤, AI 초안 작성보다 발행 후 QA와 운영 점검이 더 중요해졌다는 점을 정리한 Dev Blog 기록."
 published: true
+image:
+  path: /assets/img/posts/2026-07-01-smart-suburbanite-six-posts-post-publish-qa/cover.png
+  alt: "The Smart Suburbanite 글 6개 발행 후 RSS, 브라우저, 내부 링크, 배포, 출처 확인을 점검하는 post-publish QA 보드"
 ---
 
-## 글 6개가 되면서 보인 것
+# 수익형 블로그 글 6개를 발행하며 발행 후 QA의 중요성을 배웠다
+
+## 글 6개는 작은 숫자지만 운영 테스트로는 충분했다
 
 The Smart Suburbanite에 공개 글이 6개까지 쌓였다.
 
-이번 단계의 첫 번째 성과는 트래픽이나 수익이 아니었다. 아직 그런 결과를 말할 단계도 아니다. 대신 더 현실적인 이정표가 생겼다. 글을 기획하고, 초안을 만들고, 검수하고, 발행하고, 발행 후 다시 확인하는 흐름을 반복할 수 있는지 보는 일이었다.
+아직 이 숫자로 수익, 트래픽, SEO 성과를 말할 단계는 아니다. 오히려 지금 확인한 것은 더 작고 현실적인 것이다. 글을 기획하고, 영어 초안을 만들고, 한국어 검수 패킷으로 확인하고, 발행하고, 발행 뒤 실제 public site에서 다시 보는 흐름이 반복 가능한지였다.
 
 처음에는 "AI가 글을 얼마나 잘 쓰는가"가 중심 질문처럼 보였다. 하지만 여섯 편을 지나오면서 질문이 바뀌었다.
 
-AI가 글을 쓰는 것만으로는 콘텐츠 운영이 되지 않는다. 발행된 뒤 실제 사이트에서 어떻게 보이는지, RSS에 들어갔는지, 오래된 글과 새 글이 서로 연결되는지, 배포가 정말 끝났는지를 확인해야 한다.
+AI가 글을 쓰는 것만으로는 콘텐츠 운영이 되지 않는다. 발행된 뒤 실제 사이트에서 어떻게 보이는지, RSS에 들어갔는지, 오래된 글과 새 글이 서로 연결되는지, 배포가 정말 끝났는지까지 확인해야 한다.
+
+이제는 글쓰기 자체보다 post-publish QA가 더 크게 보이기 시작했다.
 
 ## 스마트 온도조절기 글에서 조심해야 했던 것
 
@@ -36,13 +43,17 @@ Article 005와 Article 006은 모두 smart thermostat 관련 글이었다.
 
 특히 Article 006에서는 compatibility를 다루면서 조심해야 할 지점이 많았다. 특정 제품을 추천하거나, 모든 집에 맞는다고 단정하거나, C-wire 설치와 HVAC troubleshooting을 쉽게 안내하는 식의 표현은 피해야 했다.
 
-그래서 공식 자료와 현재 기준을 다시 확인하고, 문장도 더 조심스럽게 잡았다. "대체로", "확인해야 한다", "전문가에게 문의해야 할 수 있다" 같은 표현은 글을 약하게 만드는 장식이 아니라, 독자를 잘못된 확신으로 밀어 넣지 않기 위한 안전장치였다.
+그래서 공식 자료와 현재 기준을 다시 확인하고, 문장도 더 조심스럽게 잡았다. energy savings, HVAC compatibility, C-wire, heat pump, line-voltage 같은 표현은 독자가 실제 구매나 설치 판단에 사용할 수 있기 때문이다.
+
+"대체로", "확인해야 한다", "전문가에게 문의해야 할 수 있다" 같은 표현은 글을 약하게 만드는 장식이 아니었다. 독자를 잘못된 확신으로 밀어 넣지 않기 위한 안전장치였다.
 
 ## 배포가 끝나도 QA는 끝나지 않았다
 
 Article 005 이후에는 AstroPaper에서 browser freshness 문제가 보였다.
 
 GitHub Actions가 성공했고, 공개 URL도 200을 반환했고, RSS에도 글이 들어갔다. 그런데 브라우저 일반 새로고침 화면에서는 최신 글이 바로 보이지 않는 경우가 있었다. hard refresh나 incognito 확인까지 해야 실제 배포 상태를 더 정확히 볼 수 있었다.
+
+service worker나 PWA 설정이 직접 원인이라고 단정할 수는 없었다. 다만 Astro client navigation, view transition, browser stale HTML, cache state 같은 가능성을 따로 기록할 필요는 있었다.
 
 이 경험 때문에 post-publish QA 항목이 늘어났다.
 
@@ -54,6 +65,8 @@ GitHub Actions가 성공했고, 공개 URL도 200을 반환했고, RSS에도 글
 - raw front matter 노출 여부 확인
 
 이건 화려한 자동화 기능이 아니다. 하지만 실제 운영에서는 이런 항목이 더 중요할 때가 많다. 배포가 성공했다고 생각했는데 독자가 보는 화면이 다르면, 글을 잘 썼다는 사실만으로는 충분하지 않다.
+
+이번 Dev Blog 글에서도 같은 기준을 다시 적용했다. 공개 URL에서 raw front matter가 그대로 보이면 GitHub Pages가 Jekyll build 결과가 아니라 source Markdown을 serving하고 있을 가능성을 의심해야 한다. 그래서 home, article, archives, categories를 직접 fetch하고, `---` front matter가 노출되는지 확인했다.
 
 ## GitHub 기록과 contributor 표시도 확인했다
 
@@ -71,6 +84,8 @@ Article 006 발행 과정에서는 `pnpm-lock.yaml` mismatch가 GitHub Actions d
 
 그래서 앞으로는 GitHub Actions가 dependency install이나 build 단계에서 실패하면, 무작정 package를 바꾸기 전에 `package.json`과 active lockfile이 맞는지 먼저 확인하기로 했다.
 
+이건 나중에 dashboard를 만들 때도 상태값으로 남아야 할 문제다. "글 준비 완료"와 "사이트 배포 완료"는 같은 상태가 아니다.
+
 ## 새 글을 발행하면 오래된 글도 봐야 했다
 
 Article 006 이후에는 기존 Smart Suburbanite 글들의 internal link도 다시 봤다.
@@ -78,6 +93,8 @@ Article 006 이후에는 기존 Smart Suburbanite 글들의 internal link도 다
 새 글 하나를 발행하면 그 글만 확인하면 될 것 같지만, 실제로는 오래된 글에서 새 글로 이어지는 길도 중요했다. 관련 있는 `What to Read Next` 섹션과 본문 주변 링크가 plain text mention으로 남아 있으면 독자는 다음 글로 자연스럽게 이동하기 어렵다.
 
 그래서 older posts를 audit하고, 필요한 곳에는 실제 Markdown link를 추가했다. 다만 internal link를 무조건 많이 넣는 방향은 피했다. 링크는 독자에게 도움이 될 때만 의미가 있다.
+
+여섯 번째 글 이후의 QA는 그래서 새 URL 하나를 보는 일이 아니라, 001부터 005까지의 글이 새 글과 어떻게 연결되는지 다시 보는 일이었다.
 
 ## 이제는 AI 글쓰기보다 운영 시스템에 가깝다
 
@@ -89,6 +106,12 @@ Article 006 이후에는 기존 Smart Suburbanite 글들의 internal link도 다
 
 그 시스템은 초안만 만드는 것이 아니라, 최소한 다음을 확인해야 한다.
 
+- topic fit
+- English draft
+- Korean review packet
+- claim/fact table
+- human approval
+- image and alt text
 - content risk와 source freshness
 - cautious wording
 - deployment result
