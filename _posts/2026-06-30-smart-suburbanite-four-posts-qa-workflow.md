@@ -1,5 +1,5 @@
 ---
-title: "수익형 블로그 글 4개를 발행하며 QA 체크리스트가 먼저라는 걸 배웠다"
+title: "수익형 블로그 글 4개를 발행하며 검수 체크리스트의 필요성을 배웠다"
 date: 2026-06-30 09:00:00 +0900
 categories:
   - Project AI Autoblog
@@ -12,14 +12,14 @@ tags:
   - Human Review
   - QA
   - Dev Log
-description: "The Smart Suburbanite에 공개 글 4개를 발행하면서, AI 글쓰기보다 발행 전후 QA checklist와 사람 승인 구조가 먼저 필요하다는 점을 정리한 Dev Blog 기록."
+description: "The Smart Suburbanite에 공개 글 4개를 발행하면서, AI 글쓰기보다 발행 전 검수 checklist와 사람 승인 구조가 먼저 필요하다는 점을 정리한 Dev Blog 기록."
 published: true
 image:
   path: /assets/img/posts/2026-06-30-smart-suburbanite-four-posts-qa-workflow/cover.png
   alt: "The Smart Suburbanite 첫 네 편의 글을 QA checklist 보드로 정리하고 YAML, RSS, pubDatetime, UTF-8, cover, social link 이슈를 표시한 Dev Blog cover concept"
 ---
 
-# 수익형 블로그 글 4개를 발행하며 QA 체크리스트가 먼저라는 걸 배웠다
+# 수익형 블로그 글 4개를 발행하며 검수 체크리스트의 필요성을 배웠다
 
 ## 시작하며
 
@@ -27,7 +27,7 @@ The Smart Suburbanite에 공개 글 4개를 발행했다.
 
 처음에는 "AI가 글을 잘 쓰게 할 수 있을까"가 가장 큰 질문처럼 보였다. 그런데 실제로 네 편을 반복해서 발행해 보니 더 중요한 질문은 조금 달랐다.
 
-글을 쓰는 것보다 어려웠던 것은 발행 전후에 무엇을 확인하고, 누가 승인하고, 어떤 문제를 다시 workflow에 반영할지 정하는 일이었다.
+글을 쓰는 것보다 어려웠던 것은 발행 전까지 무엇을 검수하고, 누가 승인하고, 어떤 문제를 다시 workflow에 반영할지 정하는 일이었다.
 
 그래서 이번 기록은 성공담이 아니다. 글 4개를 발행하면서 드러난 작은 문제들을 모아 보고, 왜 AI 글쓰기보다 QA checklist가 먼저 필요했는지 정리하는 글이다.
 
