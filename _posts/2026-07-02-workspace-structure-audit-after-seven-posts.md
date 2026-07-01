@@ -1,5 +1,6 @@
 ---
 title: "글이 쌓이자 워크스페이스 지도부터 다시 그렸다"
+date: 2026-07-02 02:40:34 +0900
 categories:
   - Project AI Autoblog
   - Dev Log
@@ -11,8 +12,11 @@ tags:
   - Workflow
   - QA
   - Dev Log
-description: "The Smart Suburbanite 글 7개 발행 이후, 글 목록보다 먼저 작업 지도가 필요해졌다는 점을 정리한 Dev Blog 초안."
-published: false
+description: "The Smart Suburbanite 글 7개 발행 이후, 글 목록보다 먼저 작업 지도가 필요해졌다는 점을 정리한 Dev Blog 기록."
+published: true
+image:
+  path: /assets/img/posts/2026-07-02-workspace-structure-audit-after-seven-posts/cover.png
+  alt: "Project AI Autoblog의 docs, prompts, content_lab, Dev Blog, monetized_blogs, QA 흐름을 정리한 워크스페이스 운영 지도"
 ---
 
 # 글이 쌓이자 워크스페이스 지도부터 다시 그렸다
