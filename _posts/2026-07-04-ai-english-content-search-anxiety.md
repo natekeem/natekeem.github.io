@@ -1,5 +1,6 @@
 ---
 title: "AI가 쓴 영어 글은 검색에 살아남을 수 있을까?"
+date: 2026-07-04 22:51:41 +0900
 categories:
   - Project AI Autoblog
   - Dev Log
@@ -12,7 +13,10 @@ tags:
   - QA
   - Dev Log
 description: "The Smart Suburbanite 글 9개를 발행한 뒤, AI-assisted English content가 얇거나 기계적으로 보이지 않게 검수 흐름을 보강해야 한다는 불안을 기록한 Dev Blog 초안."
-published: false
+published: true
+image:
+  path: /assets/img/posts/2026-07-04-ai-english-content-search-anxiety/cover.png
+  alt: "AI-assisted English content를 English naturalness, original value, source check, human review, AI-smell QA 기준으로 점검하는 편집 보드"
 ---
 
 # AI가 쓴 영어 글은 검색에 살아남을 수 있을까?
@@ -119,6 +123,6 @@ AI를 쓰는 것 자체보다 중요한 것은, AI가 만든 문장을 사람이
 
 ## Source note
 
-- Google Search Central Blog, "Google Search's guidance about AI-generated content": appropriate AI or automation use is not automatically against guidelines, but using it primarily to manipulate search rankings is a spam-policy issue.
-- Google Search Central, "Creating helpful, reliable, people-first content": Google frames quality around helpful, reliable content made for people, with self-assessment questions about originality, substance, trust, and production quality.
-- Google Search Central, "Spam policies for Google web search": scaled content abuse focuses on many pages created mainly to manipulate rankings and not help users, including generative AI pages that add little value.
+- Google Search Central, [Guidance on generative AI content](https://developers.google.com/search/docs/fundamentals/using-gen-ai-content): appropriate AI or automation use is not automatically against guidelines, but using it primarily to manipulate search rankings is a spam-policy issue.
+- Google Search Central, [Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content): Google frames quality around helpful, reliable content made for people, with self-assessment questions about originality, substance, trust, and production quality.
+- Google Search Central, [Spam policies for Google web search](https://developers.google.com/search/docs/essentials/spam-policies): scaled content abuse focuses on many pages created mainly to manipulate rankings and not help users, including generative AI pages that add little value.
