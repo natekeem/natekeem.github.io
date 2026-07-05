@@ -12,7 +12,7 @@ tags:
   - Search
   - QA
   - Dev Log
-description: "The Smart Suburbanite 글 9개를 발행한 뒤, AI-assisted English content가 얇거나 기계적으로 보이지 않게 검수 흐름을 보강해야 한다는 불안을 기록한 Dev Blog 초안."
+description: "The Smart Suburbanite 글 9개를 발행한 뒤, AI-assisted English content가 얕거나 기계적으로 보이지 않게 검수 흐름을 보강해야 한다고 판단한 과정을 기록했다."
 published: true
 image:
   path: /assets/img/posts/2026-07-04-ai-english-content-search-anxiety/cover.png
