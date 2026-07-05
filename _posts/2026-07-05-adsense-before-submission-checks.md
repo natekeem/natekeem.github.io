@@ -1,5 +1,6 @@
 ---
 title: "애드센스 신청 직전엔 글보다 점검이 먼저였다"
+date: 2026-07-05 23:39:00 +0900
 categories:
   - Project AI Autoblog
   - Dev Log
@@ -12,7 +13,10 @@ tags:
   - QA
   - Dev Log
 description: "The Smart Suburbanite가 10개 글을 채운 뒤 Google AdSense 신청으로 바로 넘어가지 않고 public polish, Search Console verification, sitemap fallback, 최종 pre-submission checklist를 먼저 거친 운영 기록."
-published: false
+published: true
+image:
+  path: /assets/img/posts/2026-07-05-adsense-before-submission-checks/cover.png
+  alt: "Google AdSense 신청 전 10 posts, public polish, Search Console, sitemap wait, AdSense checklist를 점검하는 Project AI Autoblog 운영 QA 보드"
 ---
 
 # 애드센스 신청 직전엔 글보다 점검이 먼저였다
@@ -31,19 +35,19 @@ The Smart Suburbanite가 공개 글 10개를 채웠다. 처음 계획만 보면 
 
 favicon이 정상으로 뜨는지, About과 Contact가 아직 scaffold 느낌을 남기지 않는지, Privacy와 Disclosure가 공개되어 있는지, 각 글의 description과 excerpt가 현재 상태를 제대로 말하는지 확인했다. cover와 alt text도 다시 봤고, 내부 링크가 독자에게 실제로 도움이 되는지, RSS와 sitemap과 robots가 공개 URL에서 열리는지도 확인했다.
 
-이 과정에서 배운 점은 꽤 현실적이었다. 본문이 괜찮아도 공개 카드가 낡아 있으면 사이트 전체가 덜 준비된 것처럼 보인다. 실제로 Dev Blog의 이전 글에서 published post인데도 description 쪽에 초안처럼 읽히는 표현이 남아 있었다. 본문만 읽으면 지나칠 수 있지만, 홈 카드나 generated HTML, RSS excerpt에서는 바로 보이는 문제였다.
+이 과정에서 배운 점은 꽤 현실적이었다. 본문이 괜찮아도 공개 카드가 낡아 있으면 사이트 전체가 덜 준비된 것처럼 보인다. 실제로 Dev Blog의 이전 글에서 published post인데도 description 쪽에 published 상태와 맞지 않는 표현이 남아 있었다. 본문만 읽으면 지나칠 수 있지만, 홈 카드나 generated HTML, RSS excerpt에서는 바로 보이는 문제였다.
 
 그 뒤로 public metadata와 excerpt QA는 별도 항목이 되었다. 이 프로젝트에서 "발행했다"는 말은 파일을 옮겼다는 뜻이 아니라, 공개 표면까지 현재 상태와 맞는지 확인했다는 뜻이어야 한다.
 
 ## Search Console에서 바로 깔끔하게 끝나지 않았다
 
-Search Console ownership verification은 HTML file upload 방식으로 완료했다. The Smart Suburbanite는 GitHub Pages project site라서 verification file을 공개 경로에 올리고, 실제 URL이 HTTP 200을 반환하는지 확인했다. 사용자가 Search Console UI에서 Verify를 눌렀고, verification은 성공으로 기록되었다.
+Search Console ownership verification은 HTML file upload 방식으로 완료했다. The Smart Suburbanite는 GitHub Pages project site라서 verification file을 공개 경로에 올리고, 실제 URL이 HTTP 200을 반환하는지 확인했다. 사용자가 Search Console UI에서 Verify를 눌렀고, verification은 완료로 기록되었다.
 
-하지만 sitemap 쪽은 바로 깔끔하게 끝나지 않았다. public URL에서는 `sitemap-index.xml`과 `sitemap-0.xml`이 열렸고 HTTP 200도 확인되었는데, Search Console Sitemaps 화면에서는 `/sitemap-index.xml` submission row가 `Couldn't fetch` / `가져올 수 없음` 상태로 보였다. type은 unknown, discovered pages는 0, last read도 비어 있었다.
+하지만 sitemap 쪽은 바로 깔끔하게 끝나지 않았다. public URL에서는 `sitemap-index.xml`, `sitemap-0.xml`, `sitemap.txt`, `rss.xml`, `robots.txt`가 열리고 HTTP 200도 확인되었는데, Search Console Sitemaps 화면에서는 제출한 sitemap entries가 여전히 `Couldn't fetch` / `가져올 수 없음` 상태로 남아 있었다.
 
 이 상태를 실패나 재난처럼 다루지는 않았다. public availability와 Search Console acceptance는 같은 말이 아니라고 분리해서 기록했다. 그리고 fallback discovery aid로 `sitemap.txt`를 추가하고, `robots.txt`에 `sitemap-index.xml`, `rss.xml`, `sitemap.txt` hints를 넣었다. `rss.xml`도 secondary fallback submission 후보로 남겼다.
 
-중요한 건 "이제 인덱싱이 된다"라고 말하지 않는 것이다. 지금 확인한 것은 public URLs가 열리고 fallback paths를 마련했다는 사실이지, crawling이나 indexing이나 ranking이나 traffic이 보장된다는 뜻이 아니다. Search Console은 시간이 걸릴 수 있고, sitemap row가 바로 마음 편한 상태로 바뀌지 않을 수도 있다.
+중요한 건 "이제 해결됐다"라고 말하지 않는 것이다. 지금 확인한 것은 public URLs가 열리고 fallback paths를 마련했다는 사실이지, crawling이나 indexing이나 ranking이나 traffic이 보장된다는 뜻이 아니다. Search Console은 시간이 걸릴 수 있고, sitemap row가 바로 마음 편한 상태로 바뀌지 않을 수도 있다. 그래서 이번 건은 해결로 포장하지 않고, fallback을 추가한 뒤 기다리는 운영 이슈로 남겼다.
 
 ## 자동화가 해주는 일은 글 생성만이 아니었다
 
@@ -53,7 +57,7 @@ Search Console ownership verification은 HTML file upload 방식으로 완료했
 
 공개 페이지가 현재 상태를 반영하는가. 메타 설명이 낡지 않았는가. RSS에 글이 들어갔는가. sitemap과 robots가 열리는가. trust pages가 최소한의 역할을 하는가. cover와 alt text가 글과 맞는가. browser freshness가 맞는가. Search Console 상태를 과장하지 않고 기록했는가.
 
-이런 확인이 빠지면 자동화는 글 생성 속도만 높인다. 반대로 이 확인들이 workflow 안에 들어오면 AI는 초안 작성 도구를 넘어 운영 보조 도구가 된다. 이번 pause는 그 방향을 더 분명하게 만들었다.
+이런 확인이 빠지면 자동화는 글 생성 속도만 높인다. 반대로 이 확인들이 workflow 안에 들어오면 AI는 글 작성 보조 도구를 넘어 운영 보조 도구가 된다. 이번 pause는 그 방향을 더 분명하게 만들었다.
 
 ## 아직 승인받은 것은 아니다
 
@@ -75,6 +79,6 @@ Search Console ownership verification은 HTML file upload 방식으로 완료했
 
 ## Source note
 
-- Google AdSense, [AdSense eligibility requirements](https://support.google.com/adsense/answer/9724): AdSense participation depends on owned content and policy compliance; this draft does not claim approval.
+- Google AdSense, [AdSense eligibility requirements](https://support.google.com/adsense/answer/9724): AdSense participation depends on owned content and policy compliance; this post does not claim approval.
 - Google AdSense, [Make sure your site's pages are ready for AdSense](https://support.google.com/adsense/answer/7299563): page readiness includes useful content and working navigation, so public QA belongs before submission.
 - Google Search Console Help, [Sitemaps report](https://support.google.com/webmasters/answer/7451001): sitemap report processing can differ from public URL availability, so the current sitemap issue is recorded cautiously.
