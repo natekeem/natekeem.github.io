@@ -12,7 +12,11 @@ tags:
   - GitHub Pages
   - Dev Log
 description: "The Smart Suburbanite가 Google AdSense 신청 직전 GitHub Pages project subpath 한계 때문에 smartsuburbanite.com을 붙이고, canonical, sitemap, Search Console, AdSense 흐름을 다시 정리한 프로젝트 로그."
-published: false
+date: 2026-07-11 12:08:10 +0900
+published: true
+image:
+  path: /assets/img/posts/2026-07-11-custom-domain-before-adsense/cover.png
+  alt: "GitHub Pages project path에서 smartsuburbanite.com custom domain으로 이어지는 Route 53, Search Console, Google AdSense review 흐름을 보여주는 Project AI Autoblog 인프라 지도"
 ---
 
 # 애드센스 신청 버튼 앞에서 결국 도메인을 붙였다
@@ -53,7 +57,7 @@ custom domain으로 옮긴 뒤 public output은 정리됐다. home, posts, archi
 
 현재 Google AdSense 쪽에서는 `smartsuburbanite.com` site add/registration은 완료된 상태로 기록되어 있다. 하지만 AdSense approval은 아니다. 지금은 site ad serving eligibility review in progress 상태다.
 
-display ad code도 넣지 않았다. analytics도 넣지 않았다. Google Tag Manager도 없다. affiliate links나 comments도 붙이지 않았다. Article 011도 만들지 않았다. `ads.txt`는 별도 준비 단계로 이미 root에 두었지만, 그것도 approval이나 ad serving success를 뜻하지 않는다.
+display ad code도 넣지 않았다. analytics도 넣지 않았다. Google Tag Manager도 없다. affiliate links나 comments도 붙이지 않았다. Article 011도 만들지 않았다. `ads.txt`는 별도 준비 단계로 root에 두었지만, 그것도 approval이나 ad serving success를 뜻하지 않는다.
 
 이 부분을 계속 분리해서 써야 한다. "신청 준비를 했다", "site add를 했다", "`ads.txt`를 준비했다", "review 중이다", "approved다"는 모두 다른 상태다. 이 프로젝트에서 가장 위험한 문장은 실제 상태보다 한 단계 앞서가는 문장이다.
 
@@ -78,6 +82,7 @@ Project AI Autoblog가 만들려는 것은 단순한 article generator가 아니
 ## Source note
 
 - Google AdSense, [AdSense eligibility requirements](https://support.google.com/adsense/answer/9724): this draft does not claim Google AdSense approval.
+- Google AdSense Help, [Add a new site](https://support.google.com/adsense/answer/12169212): this draft treats site add, review, and approval as separate states.
 - GitHub Docs, [Configuring a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site): custom domain setup changes the public site identity and routing surface.
 - Google Search Console Help, [Sitemaps report](https://support.google.com/webmasters/answer/7451001): sitemap submission status and public URL availability should be recorded separately.
 - Google Search Central, [Influencing your title links in search results](https://developers.google.com/search/docs/appearance/title-link): this draft does not claim search result display has already changed.
