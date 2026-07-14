@@ -12,7 +12,7 @@
 - Native dimensions: 1672 x 941 pixels.
 - Crop / fit: native near-16:9 output used without crop; Chirpy cover path uses the original PNG.
 - Final local path: `assets/img/posts/2026-07-14-short-prompts-need-qa-documents/cover.png`.
-- Planned public URL: `https://natekeem.github.io/assets/img/posts/2026-07-14-short-prompts-need-qa-documents/cover.png`.
+- Planned public URL: `https://natekeem.com/assets/img/posts/2026-07-14-short-prompts-need-qa-documents/cover.png`.
 - Usage basis: original project cover generated for this post; no third-party stock asset used.
 - Attribution required: no.
 - Inline image: none; cover-only.
