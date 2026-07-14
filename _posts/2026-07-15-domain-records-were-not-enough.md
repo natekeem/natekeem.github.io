@@ -11,7 +11,11 @@ tags:
   - Custom Domain
   - Dev Log
 description: "나태킴의 커밋로그를 natekeem.com으로 옮기면서 DNS 레코드보다 먼저 확인했어야 할 네임서버 위임과 GitHub Pages custom domain 적용 순서를 기록한 프로젝트 로그."
-published: false
+date: 2026-07-15 00:09:09 +0900
+published: true
+image:
+  path: /assets/img/posts/2026-07-15-domain-records-were-not-enough/cover.png
+  alt: "네임서버와 DNS 레코드 점검을 떠올리게 하는 조용한 작업 책상"
 ---
 
 # 도메인 레코드를 다 넣었는데도 블로그가 안 열린 이유
