@@ -1,6 +1,6 @@
 ---
 title: "AI 블로그 3개를 만들고 나서야 보인 진짜 문제"
-date: 2026-07-17 02:05:00 +0900
+date: 2026-07-17 01:50:00 +0900
 categories:
   - Project AI Autoblog
   - Dev Log
