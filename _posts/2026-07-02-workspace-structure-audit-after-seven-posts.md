@@ -8,8 +8,6 @@ tags:
   - AI
   - Autoblog
   - Smart Suburbanite
-  - Workspace
-  - Workflow
   - QA
   - Dev Log
 description: "The Smart Suburbanite 글 7개 발행 이후, 글 목록보다 먼저 작업 지도가 필요해졌다는 점을 정리한 Dev Blog 기록."

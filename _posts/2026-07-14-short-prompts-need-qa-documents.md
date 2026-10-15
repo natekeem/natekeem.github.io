@@ -6,9 +6,7 @@ categories:
 tags:
   - AI
   - Autoblog
-  - Prompt Engineering
   - QA
-  - Workflow
   - Dev Log
 description: "The Smart Suburbanite Article 014 작업에서 긴 일회성 프롬프트를 줄이고 site profile, QA module, 저장소 경계, 이미지 정책, 최종 보고 규칙으로 품질 계약을 옮긴 과정을 기록한 프로젝트 로그."
 date: 2026-07-14 21:26:43 +0900

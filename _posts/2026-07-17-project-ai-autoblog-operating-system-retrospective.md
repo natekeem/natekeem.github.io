@@ -6,10 +6,8 @@ categories:
   - Dev Log
 tags:
   - AI
-  - Codex
-  - Content Operations
-  - Search Readiness
-  - Editorial QA
+  - Autoblog
+  - QA
   - Dev Log
 description: "AI-assisted blogging 아이디어로 시작한 Project AI Autoblog가 세 사이트의 장애와 검수를 거치며 저장소 경계, Search Readiness, 편집 품질, 사람 승인을 갖춘 운영체계로 바뀐 과정을 돌아본다."
 published: true

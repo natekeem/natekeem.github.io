@@ -8,8 +8,6 @@ tags:
   - AI
   - Autoblog
   - Smart Suburbanite
-  - Workflow
-  - Human Review
   - QA
   - Dev Log
 description: "The Smart Suburbanite에 공개 글 4개를 발행하면서, AI 글쓰기보다 발행 전 검수 checklist와 사람 승인 구조가 먼저 필요하다는 점을 정리한 Dev Blog 기록."

@@ -6,9 +6,8 @@ categories:
 tags:
   - AI
   - Smart Suburbanite
-  - Google AdSense
-  - Content Operations
-  - Editorial QA
+  - SEO
+  - QA
   - Dev Log
 description: "The Smart Suburbanite의 AdSense low-value-content 거절 뒤 14편의 공개 근거, 고유 판단, 책임 구조를 감사하고 다시 설계한 과정과 아직 대기 중인 재심사 상태를 기록한다."
 date: 2026-07-19 09:29:00 +0900

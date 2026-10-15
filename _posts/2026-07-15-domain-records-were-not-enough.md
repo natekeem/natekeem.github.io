@@ -4,11 +4,8 @@ categories:
   - Project AI Autoblog
   - Dev Log
 tags:
-  - DNS
-  - Route 53
-  - GitHub Pages
-  - Search Console
-  - Custom Domain
+  - SEO
+  - Web Dev
   - Dev Log
 description: "나태킴의 커밋로그를 natekeem.com으로 옮기면서 DNS 레코드보다 먼저 확인했어야 할 네임서버 위임과 GitHub Pages custom domain 적용 순서를 기록한 프로젝트 로그."
 date: 2026-07-15 00:09:09 +0900

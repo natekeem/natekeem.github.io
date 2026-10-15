@@ -7,9 +7,7 @@ categories:
 tags:
   - AI
   - Autoblog
-  - Niche Selection
   - SEO
-  - Monetization
   - Dev Log
 description: "AI 블로그 자동화 프로젝트를 단순 자동 발행 실험이 아니라 수익형 콘텐츠 운영 시스템으로 발전시키기 위해, 영어권 수익형 블로그 후보 10개를 평가하고 1호 블로그 방향을 정한 기록."
 published: true

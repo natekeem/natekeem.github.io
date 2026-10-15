@@ -6,10 +6,9 @@ categories:
   - Dev Log
 tags:
   - AI
-  - Codex
-  - Automation
+  - Autoblog
+  - QA
   - Dev Log
-  - Workflow
 description: "AI 에이전트에게 블로그 이름 수정을 맡겼다가 고유명사가 계속 변형되는 문제를 겪고, 정확한 문자열은 사람이 직접 확인해야 한다는 운영 원칙을 배운 기록."
 published: true
 image:

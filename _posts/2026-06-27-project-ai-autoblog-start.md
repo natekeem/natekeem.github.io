@@ -6,11 +6,9 @@ categories:
   - Dev Log
 tags:
   - AI
-  - Blogging
-  - Automation
-  - Codex
-  - Jekyll
-  - Build in Public
+  - Autoblog
+  - Web Dev
+  - Dev Log
 description: "AI 기반 수익형 블로그 자동화 프로젝트를 시작하면서 바로 자동화 서버를 만들지 않고 HQ 워크스페이스와 문서 체계부터 만든 이유를 정리했다."
 image:
   path: /assets/img/posts/2026-06-27-project-ai-autoblog-start/cover.png

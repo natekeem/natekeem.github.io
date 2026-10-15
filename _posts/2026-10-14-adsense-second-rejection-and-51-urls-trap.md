@@ -4,12 +4,9 @@ categories:
   - Project AI Autoblog
   - Dev Log
 tags:
-  - AI
   - Smart Suburbanite
-  - Google AdSense
   - SEO
-  - Search Console
-  - Web Development
+  - Web Dev
   - Dev Log
 description: "재심사 제출 83일 만에 마주한 애드센스 2차 거절과, 3개월 치 구글 서치콘솔 실측 데이터를 열어보고 발견한 14편 블로그의 51개 색인 URL 문제 및 noindex 복구 기록을 공유합니다."
 date: 2026-10-14 11:00:00 +0900

@@ -8,8 +8,7 @@ tags:
   - AI
   - Autoblog
   - Smart Suburbanite
-  - Workflow
-  - Human Review
+  - QA
   - Dev Log
 description: "The Smart Suburbanite에 첫 두 개의 영어 글을 발행하면서, 자동화보다 먼저 검수 흐름과 배포 문제를 검증한 기록."
 published: true

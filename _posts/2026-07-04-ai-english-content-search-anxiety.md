@@ -8,8 +8,7 @@ tags:
   - AI
   - Autoblog
   - Smart Suburbanite
-  - English Content
-  - Search
+  - SEO
   - QA
   - Dev Log
 description: "The Smart Suburbanite 글 9개를 발행한 뒤, AI-assisted English content가 얕거나 기계적으로 보이지 않게 검수 흐름을 보강해야 한다고 판단한 과정을 기록했다."

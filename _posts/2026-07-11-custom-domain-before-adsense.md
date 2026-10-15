@@ -4,12 +4,9 @@ categories:
   - Project AI Autoblog
   - Dev Log
 tags:
-  - AI
-  - Autoblog
   - Smart Suburbanite
-  - Google AdSense
-  - Search Console
-  - GitHub Pages
+  - SEO
+  - Web Dev
   - Dev Log
 description: "The Smart Suburbanite가 Google AdSense 신청 직전 GitHub Pages project subpath 한계 때문에 smartsuburbanite.com을 붙이고, canonical, sitemap, Search Console, AdSense 흐름을 다시 정리한 프로젝트 로그."
 date: 2026-07-11 12:08:10 +0900

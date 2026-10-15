@@ -6,10 +6,8 @@ categories:
 tags:
   - AI
   - Smart Suburbanite
-  - Visual Design
-  - UX
-  - Editorial QA
-  - Front-End
+  - Web Dev
+  - QA
   - Dev Log
 description: "가볍고 편하다는 이유로 고집했던 SVG 일러스트를 전량 폐기하고, 18편 전체의 커버를 교외 주택 생활감이 살아있는 1200×675 실사 에셋으로 갈아엎으며 정립한 반(反) AI 비주얼 원칙을 기록합니다."
 date: 2026-10-14 16:00:00 +0900

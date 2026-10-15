@@ -4,12 +4,9 @@ categories:
   - AI & Tech
   - Git Trending
 tags:
-  - AI & Tech
-  - GitHub Trending
-  - 오픈소스
-  - AI 에이전트
-  - MCP
-  - 개발 도구
+  - AI
+  - Git Trending
+  - Web Dev
   - Dev Log
 description: "2026년 10월 셋째 주 깃허브 트렌딩(Trendshift Weekly)을 점령한 AI 오픈소스 TOP 5를 집중 분석합니다. 역공학 에이전트 rea부터 Claude Code 시각화 anatomy, 로컬 음성 생성 VoiceStudio, 자율 모의해킹 pentagi, Rust 기반 포토 에디터 photocraft까지, '에이전트 호환(Agent-Ready)' 소프트웨어 트렌드의 핵심을 짚어봅니다."
 date: 2026-10-15 16:00:00 +0900

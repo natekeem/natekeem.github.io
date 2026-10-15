@@ -8,7 +8,6 @@ tags:
   - AI
   - Autoblog
   - Smart Suburbanite
-  - Workflow
   - QA
   - Dev Log
 description: "The Smart Suburbanite에 글 6개를 발행한 뒤, AI 초안 작성보다 발행 후 QA와 운영 점검이 더 중요해졌다는 점을 정리한 Dev Blog 기록."

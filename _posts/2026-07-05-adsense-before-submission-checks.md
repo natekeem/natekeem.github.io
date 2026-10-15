@@ -5,11 +5,9 @@ categories:
   - Project AI Autoblog
   - Dev Log
 tags:
-  - AI
   - Autoblog
   - Smart Suburbanite
-  - Google AdSense
-  - Search Console
+  - SEO
   - QA
   - Dev Log
 description: "The Smart Suburbanite가 10개 글을 채운 뒤 Google AdSense 신청으로 바로 넘어가지 않고 public polish, Search Console verification, sitemap fallback, 최종 pre-submission checklist를 먼저 거친 운영 기록."

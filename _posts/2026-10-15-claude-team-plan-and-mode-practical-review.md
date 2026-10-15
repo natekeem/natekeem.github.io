@@ -4,11 +4,9 @@ categories:
   - AI & Tech
   - Claude
 tags:
-  - Claude
-  - AI 생산성
-  - Claude Team
-  - Claude Projects
-  - 개발 도구
+  - AI
+  - Web Dev
+  - QA
   - Dev Log
 description: "월 30달러, 최소 5인 결제라는 장벽에도 불구하고 Claude Team 플랜과 Projects 기능을 프로덕션 파이프라인에 도입해보며 느낀 컨텍스트 고정의 위력, 모드 분리 활용법, 3대 실무 프롬프트 템플릿, 그리고 솔직한 비용 대비 한계를 정리합니다."
 date: 2026-10-15 14:00:00 +0900
