@@ -35,6 +35,23 @@ image:
 
 ---
 
+## 🏆 이번 주 깃허브 트렌딩 AI 오픈소스 TOP 5 (Oct 12 – 18)
+
+본격적인 상세 분석에 앞서, 이번 주 개발자들의 지속적인 모멘텀을 이끈 TOP 5 저장소의 순위와 핵심 특징을 먼저 한눈에 정리합니다.
+
+| 순위 | 오픈소스 저장소 | 핵심 기능 및 역할 | 이번 주 모멘텀 (Trendshift) | 에이전트 연동 핵심 기술 |
+| :---: | :--- | :--- | :---: | :--- |
+| **1위** | [morluto/rea](https://github.com/morluto/rea) | 바이너리·앱 역공학(Reverse Engineering) 에이전트 | **+40.9k** | Ghidra/Hopper 디컴파일러 직접 연동 & MCP 서버 |
+| **2위** | [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) | 기계 기술문서용 인터랙티브 아이소메트릭 다이어그램 생성기 | **+406** (누적 8.6k) | Claude Code 전용 스킬 (`/anatomy`), SVG/WebGL 코드 생성 |
+| **3위** | [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) | 646개 언어 완전 로컬 음성 복제 & 다국어 TTS 워크스테이션 | **+777** (누적 9.0k) | 로컬 F5-TTS/CosyVoice 구동 + 백그라운드 MCP 도구 제공 |
+| **4위** | [vxcontrol/pentagi](https://github.com/vxcontrol/pentagi) | 도커 샌드박스 기반 완전 자율 침투 테스트(모의해킹) 시스템 | **+1.2k** (누적 4.7k) | 멀티 에이전트(연구·개발·실행) 오케스트레이션 & 관측성 |
+| **5위** | [storytold/photocraft](https://github.com/storytold/photocraft) | 순수 Rust 네이티브 초고속 포토 에디터 (120 FPS) | **누적 2.8k** | egui/wgpu 렌더링, Headless CLI & 에이전트 조작 MCP |
+
+> 💡 **이번 주 핵심 관전 포인트**:  
+> 5개 프로젝트 모두 **"에이전트가 소프트웨어를 직접 다룰 수 있도록 만든 인터페이스(MCP/CLI/Skill)"**를 탑재하고 있습니다. 인간을 위한 UI만 만들던 시대를 지나, AI 에이전트가 백그라운드에서 자유자재로 호출하는 '에이전트 호환(Agent-Ready)' 소프트웨어로의 전환이 본격화되고 있습니다.
+
+---
+
 ## 1. morluto/rea: 바이너리와 앱을 씹어먹는 역공학(Reverse Engineering) 에이전트
 
 ```
