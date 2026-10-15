@@ -16,7 +16,7 @@ date: 2026-10-15 16:00:00 +0900
 published: true
 image:
   path: /assets/img/posts/2026-10-15-git-trending-ai-weekly-01/cover.jpg
-  alt: "모니터에 띄워진 깃허브 트렌딩 대시보드와 AI 오픈소스 코드 분석 터미널"
+  alt: "Git Trending AI TOP 5 주간 오픈소스 랭킹 에디토리얼 커버 그래픽"
 ---
 
 ## "하루에만 수십 개씩 쏟아지는 AI 저장소, 대체 뭘 봐야 할까?"
