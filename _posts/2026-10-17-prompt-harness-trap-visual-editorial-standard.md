@@ -9,7 +9,7 @@ tags:
   - Dev Log
   - Web Dev
 description: "AI 에이전트에게 블로그 표지를 맡기면 왜 매번 어두운 방에서 노트북을 쳐다보는 판박이 스톡 사진만 나올까? 선의로 만든 프롬프트 하네스가 AI의 창의성을 거세하고 최악의 안전빵 로컬 미니멈에 가둬버렸던 원인을 파헤칩니다. 표지 탈정형화, 본문 시각화 의무화, 로컬 헤드리스 크롬 파이프라인 구축까지의 치열한 개선 과정을 솔직하게 기록합니다."
-date: 2026-10-17 01:15:00 +0900
+date: 2026-10-17 00:50:00 +0900
 published: true
 image:
   path: /assets/img/posts/2026-10-17-prompt-harness-trap-visual-editorial-standard/cover.jpg
