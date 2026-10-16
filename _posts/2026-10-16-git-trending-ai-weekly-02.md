@@ -9,7 +9,7 @@ tags:
   - Web Dev
   - Dev Log
 description: "2026년 10월 셋째 주 깃허브 트렌딩(Trendshift Weekly) 6위부터 10위까지의 알짜 오픈소스를 집중 분석합니다. 맥북 없이 윈도우/리눅스에서 iOS 앱을 컴파일하는 xtool부터, 순수 Rust로 120fps를 뽑아내는 MS Word 재구현체 wordcraft, DeepMind EmbeddingGemma 2 기반 온디바이스 시맨틱 검색 DigUp, Matt Pocock의 실전 AI 에이전트 스킬까지 엔지니어링의 정수를 짚어봅니다."
-date: 2026-10-16 23:15:00 +0900
+date: 2026-10-16 22:30:00 +0900
 published: true
 image:
   path: /assets/img/posts/2026-10-16-git-trending-ai-weekly-02/cover.jpg
