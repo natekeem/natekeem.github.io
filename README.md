@@ -7,14 +7,14 @@
 - **저장소 (GitHub)**: [natekeem/natekeem.github.io](https://github.com/natekeem/natekeem.github.io)
 - **작성자 / 표시 이름**: `나태킴` (`natekeem`)
 - **엔진 및 테마**: Jekyll 4.x + Chirpy Theme
-- **발행 현황**: 총 21편 발행 완료 (2026-10-16 기준)
+- **발행 현황**: 총 24편 발행 완료 (2026-10-17 기준)
 - **서치콘솔 상태**: 8대 정예 토픽 허브 체제 (`sitemap.xml` 40개 URL 정합 수집 완료)
 
 ---
 
 ## 📚 주요 카테고리 및 연재 시리즈
 
-1. **AI & Tech**: 최신 AI 에이전트, LLM 툴체인 실전 리뷰 및 **[Git Trending AI]** 주간 큐레이션 (순위 엄격 정렬, 1200×675 실기 터미널 캡처, 즉시 실행 CLI, Before/After 지표, 실무 유스케이스 2선 제공)
+1. **AI & Tech**: 최신 AI 에이전트, LLM 툴체인 실전 리뷰 및 **[Git Trending AI]** 주간 큐레이션 (순위 엄격 정렬, 2400×1350 실기 터미널 캡처, 즉시 실행 CLI, Before/After 지표, 실무 유스케이스 2선 제공)
 2. **Dev Log**: 프롬프트 하네스 트러블슈팅, 사이트 인프라 개선, 서치콘솔/애드센스 문제 해결, 자동화 운영 회고
 3. **Web Dev**: Astro/Jekyll 테마 튜닝, 반응형 CSS, 폰트 및 에디토리얼 비주얼 시스템 구축
 4. **Project Autoblog**: Project AI Autoblog 포트폴리오 거버넌스 및 운영 기록
