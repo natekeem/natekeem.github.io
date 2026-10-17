@@ -1,5 +1,5 @@
 ---
-title: "\"남의 블로그 고치느라 내 블로그가 썩고 있었다\": Chirpy 42개 태그 통폐합과 서치콘솔 40개 정예화 실전기"
+title: "내 블로그 42개 태그 통폐합과 서치콘솔 40개 정예화 작업기"
 categories:
   - Project AI Autoblog
   - Dev Log

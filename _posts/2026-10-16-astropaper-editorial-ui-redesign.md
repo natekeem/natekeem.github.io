@@ -1,5 +1,5 @@
 ---
-title: "\"AstroPaper의 흔한 템플릿 냄새를 완전히 벗겨낸 날: 2개 영문 블로그의 에디토리얼 UI 전면 리뉴얼 기록\""
+title: "AstroPaper 템플릿 냄새 지우기: 영문 블로그 UI 전면 개편기"
 categories:
   - Project AI Autoblog
   - Dev Log

@@ -1,5 +1,5 @@
 ---
-title: "[Git Trending AI #01] 이번 주 깃허브를 뒤흔든 AI 오픈소스 TOP 5: '이제 모든 소프트웨어는 에이전트를 탑재한다'"
+title: "[Git Trending AI #01] 이번 주 깃허브 인기 오픈소스 TOP 5"
 categories:
   - AI & Tech
   - Git Trending

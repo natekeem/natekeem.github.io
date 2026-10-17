@@ -1,5 +1,5 @@
 ---
-title: "애드센스 재심사 3달 만의 2차 거절, 그리고 서치콘솔이 알려준 51개 URL의 함정"
+title: "애드센스 3달 만의 2차 거절과 서치콘솔 51개 URL의 함정"
 categories:
   - Project AI Autoblog
   - Dev Log

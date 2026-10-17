@@ -1,5 +1,5 @@
 ---
-title: "[Git Trending AI #03] 이번 주 깃허브를 뒤흔든 AI 오픈소스 TOP 5: '단순 래퍼의 종말과 에이전트 스킬·보안 전쟁'"
+title: "[Git Trending AI #03] 이번 주 깃허브 인기 오픈소스 TOP 5"
 categories:
   - AI & Tech
   - Git Trending

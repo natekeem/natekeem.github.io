@@ -1,5 +1,5 @@
 ---
-title: "[Git Trending AI #02] 이번 주 깃허브를 뒤흔든 오픈소스 TOP 6~10: '순수 Rust의 역습과 윈도우/리눅스 iOS 빌드의 충격'"
+title: "[Git Trending AI #02] 이번 주 깃허브 인기 오픈소스 TOP 6~10"
 categories:
   - AI & Tech
   - Git Trending
@@ -99,8 +99,8 @@ artcraft export --input ./shaders/procedural_mesh.wgsl --output ./assets/mesh.gl
 핵심 키워드: Cross-platform iOS Build, Xcode Alternative, Linux CI/CD
 ```
 
-![xtool을 사용하여 리눅스 우분투 환경에서 iOS 앱 바이너리를 크로스 컴파일하는 터미널 화면](/assets/img/posts/2026-10-16-git-trending-ai-weekly-02/02-xtool.png)
-*▲ xtool 실행 화면: macOS 하드웨어 없이 Ubuntu 리눅스에서 SwiftPM 종속성을 풀고 Darwin Mach-O 바이너리를 빌드하여 14.8초 만에 .ipa 패키징을 완료한다.*
+![xtool의 Linux/Windows 기반 크로스플랫폼 iOS SwiftPM 빌드 아키텍처 공식 커버](/assets/img/posts/2026-10-16-git-trending-ai-weekly-02/02-xtool.png)
+*▲ xtool 아키텍처: macOS 하드웨어 없이 Ubuntu 리눅스/윈도우에서 SwiftPM 종속성을 풀고 Darwin Mach-O 바이너리를 빌드하여 .ipa 패키징을 완료한다.*
 
 모바일 개발을 해본 엔지니어라면 누구나 애플의 **"macOS 독점 감옥"**에 이를 갈아본 적이 있을 것이다. 플러터(Flutter)나 리액트 네이티브(React Native)로 크로스플랫폼 코드를 짜더라도, 결국 최종 `.ipa` 파일을 빌드하고 앱스토어에 올리려면 무조건 수백만 원짜리 맥 하드웨어가 필요했다. GitHub Actions 클라우드 러너 비용도 macOS가 리눅스보다 10배 이상 비싸다.
 
@@ -222,8 +222,8 @@ digup search "외주 용역 계약 지체상금 상한선 규정" --min-score 0.
 핵심 키워드: AI Agent Skills, Developer Workflows, TypeScript Strict Migration
 ```
 
-![Matt Pocock의 AI 에이전트 스킬 실행 화면과 Claude Code 터미널 연동 인터페이스](/assets/img/posts/2026-10-16-git-trending-ai-weekly-02/05-skills.png)
-*▲ mattpocock/skills 실행 화면: 프롬프트 복붙 없이 Claude Code 에이전트가 AST 기반 스킬을 직접 호출하여 레거시 any 코드를 Zod 스키마 기반 엄격 타입으로 1분 만에 치유한다.*
+![Matt Pocock의 Total TypeScript 공식 에이전트 스킬 리포지토리 배너](/assets/img/posts/2026-10-16-git-trending-ai-weekly-02/05-skills.png)
+*▲ mattpocock/skills: 프롬프트 복붙 없이 Claude Code / Cursor 에이전트가 AST 기반 스킬을 직접 호출하여 레거시 any 코드를 Zod 스키마 기반 엄격 타입으로 1분 만에 치유한다.*
 
 타입스크립트(TypeScript) 업계에서 가장 신뢰받는 교육자 **맷 포콕(Matt Pocock)**이 자신의 로컬 개발 환경(`.agents/skills/`)에서 수개월간 직접 굴리며 완성한 **AI 코딩 에이전트 전용 실전 스킬(Skills) 세트**를 공개했다.
 
