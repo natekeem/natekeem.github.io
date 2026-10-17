@@ -55,7 +55,7 @@ image:
 핵심 키워드: Agentic Skills, TDD Enforcement, Software Engineering Methodology
 ```
 
-![superpowers의 자율 TDD 파이프라인 및 테스트 검증 터미널 화면](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/01-superpowers.png)
+![obra/superpowers의 스킬 주입 구조와 Claude Code 자율 TDD 워크플로우 아키텍처](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/01-superpowers.png)
 
 AI 코딩 에이전트에게 작업을 시키면 가장 흔히 겪는 문제가 있습니다. 코드를 짜라고 하면 테스트도 안 돌려보고 대충 돌아갈 것처럼 보이는 그럴듯한 껍데기를 만들어놓고 "작업을 마쳤습니다"라며 끝내버립니다.
 
@@ -98,7 +98,7 @@ superpowers test --mode=autonomous --spec=auth-flow.spec.ts
 핵심 키워드: Personal AI Assistant, Multi-Channel Gateway, OS Automation
 ```
 
-![OpenClaw의 메신저 멀티채널 게이트웨이 및 백그라운드 OS 자동화 터미널 콘솔](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/02-openclaw.png)
+![OpenClaw의 공식 데스크톱 게이트웨이 온보딩 및 채널 연동 설정 화면](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/02-openclaw.png)
 
 외출 중에 집이나 작업실 맥북에서 빌드가 깨졌거나 서버 디스크가 꽉 찼을 때, 스마트폰으로 복잡한 SSH 앱을 열어 타이핑하는 것은 고역입니다.
 
@@ -143,7 +143,7 @@ npm run gateway -- --channels=telegram --local-model
 핵심 키워드: LLM Serving, RadixAttention, Cache Reuse, Low Latency
 ```
 
-![SGLang의 RadixAttention 캐시 매칭 및 초고속 토큰 처리 벤치마크 화면](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/03-sglang.png)
+![LMSYS가 공개한 SGLang의 RadixAttention 트리 캐시 매칭 및 LRU 관리 동작 원리](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/03-sglang.png)
 
 에이전트 워크플로우를 운영할 때 GPU를 가장 낭비하는 원인은 **'반복되는 긴 시스템 프롬프트(System Prompt)'**입니다. 
 
@@ -186,7 +186,7 @@ python3 -m sglang.launch_server \
 핵심 키워드: Zero Abstraction, Education, Cleanroom LLM, Inspectable
 ```
 
-![nanochat의 350줄 단일 파일 아키텍처 및 미니멀 훈련 루프 콘솔](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/04-nanochat.png)
+![카파시(Karpathy)가 직접 측정한 nanochat의 $100 훈련 비용 대비 Scaling Law 수렴 그래프](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/04-nanochat.png)
 
 HuggingFace, LangChain, LlamaIndex 같은 라이브러리에 파묻혀 코드를 짜다 보면, 내가 LLM을 이해하고 있는 건지 거대한 라이브러리의 설정값 래퍼가 된 건지 회의감이 들 때가 있습니다.
 
@@ -226,11 +226,11 @@ python3 chat.py
 저장소: perplexityai/bumblebee
 주간 랭킹: 5위 (누적 스타: 5,200+)
 라이선스: Apache 2.0
-주요 스택: Rust, Python, LibClang
+주요 스택: Go 1.25+ (Zero non-stdlib dependencies), NDJSON
 핵심 키워드: MCP Security, Supply Chain Audit, Zero-Trust, Tool Sandbox
 ```
 
-![Bumblebee의 로컬 MCP 서버 취약점 및 악성 패키지 정적 분석 결과 화면](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/05-bumblebee.png)
+![Bumblebee의 Go 기반 로컬 개발 환경 제로 의존성 공급망 스캐너 아키텍처 및 NDJSON 출력](/assets/img/posts/2026-10-17-git-trending-ai-weekly-03/05-bumblebee.png)
 
 Claude Desktop이나 Cursor에 커뮤니티에서 만든 MCP(Model Context Protocol) 서버를 붙여보신 적 있으신가요? 
 
