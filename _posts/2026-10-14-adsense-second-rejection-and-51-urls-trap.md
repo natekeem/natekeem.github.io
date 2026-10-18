@@ -1,8 +1,6 @@
 ---
 title: "애드센스 3달 만의 2차 거절과 서치콘솔 51개 URL의 함정"
-categories:
-  - Project AI Autoblog
-  - Dev Log
+categories: [Dev Log]
 tags:
   - Smart Suburbanite
   - SEO

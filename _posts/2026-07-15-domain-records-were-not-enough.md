@@ -1,8 +1,6 @@
 ---
 title: "도메인 레코드를 다 넣었는데도 블로그가 안 열린 이유"
-categories:
-  - Project AI Autoblog
-  - Dev Log
+categories: [Dev Log]
 tags:
   - SEO
   - Web Dev

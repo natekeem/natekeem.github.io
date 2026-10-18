@@ -1,8 +1,6 @@
 ---
 title: "프롬프트를 줄였더니 QA 문서가 더 중요해졌다"
-categories:
-  - Project AI Autoblog
-  - Dev Log
+categories: [Dev Log]
 tags:
   - AI
   - Autoblog

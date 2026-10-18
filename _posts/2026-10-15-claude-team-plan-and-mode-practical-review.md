@@ -1,8 +1,6 @@
 ---
 title: "Claude Team 플랜 한 달 써보고 느낀 장단점 솔직 후기"
-categories:
-  - AI & Tech
-  - Claude
+categories: [AI & Tech]
 tags:
   - AI
   - Web Dev

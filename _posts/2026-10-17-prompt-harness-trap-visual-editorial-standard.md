@@ -1,8 +1,6 @@
 ---
 title: "블로그에 맨날 똑같은 노트북 사진만 나왔던 이유 (그리고 해결기)"
-categories:
-  - Project AI Autoblog
-  - Dev Log
+categories: [Dev Log]
 tags:
   - AI
   - Autoblog

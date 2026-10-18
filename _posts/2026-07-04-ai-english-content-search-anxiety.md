@@ -1,9 +1,7 @@
 ---
 title: "AI가 쓴 영어 글은 검색에 살아남을 수 있을까?"
 date: 2026-07-04 22:51:41 +0900
-categories:
-  - Project AI Autoblog
-  - Dev Log
+categories: [Dev Log]
 tags:
   - AI
   - Autoblog

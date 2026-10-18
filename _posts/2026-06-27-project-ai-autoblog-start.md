@@ -1,9 +1,7 @@
 ---
 title: "Project AI Autoblog를 시작하며 HQ 워크스페이스부터 만든 이유"
 date: 2026-06-27 09:00:00 +0900
-categories:
-  - Project AI Autoblog
-  - Dev Log
+categories: [Dev Log]
 tags:
   - AI
   - Autoblog

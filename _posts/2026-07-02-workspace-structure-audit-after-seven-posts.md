@@ -1,9 +1,7 @@
 ---
 title: "폴더가 헷갈리기 시작해서 워크스페이스 지도를 만들었다"
 date: 2026-07-02 02:40:34 +0900
-categories:
-  - Project AI Autoblog
-  - Dev Log
+categories: [Dev Log]
 tags:
   - AI
   - Autoblog

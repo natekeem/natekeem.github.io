@@ -1,8 +1,6 @@
 ---
 title: "AdSense에서 ‘가치가 별로 없는 콘텐츠’ 판정을 받고 블로그 14편을 다시 설계한 과정"
-categories:
-  - Project AI Autoblog
-  - Dev Log
+categories: [Dev Log]
 tags:
   - AI
   - Smart Suburbanite
