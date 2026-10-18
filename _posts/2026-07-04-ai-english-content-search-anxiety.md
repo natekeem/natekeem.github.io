@@ -18,8 +18,6 @@ image:
   alt: "AI-assisted English content를 English naturalness, original value, source check, human review, AI-smell QA 기준으로 점검하는 편집 보드"
 ---
 
-# AI가 쓴 영어 글은 검색에 살아남을 수 있을까?
-
 ## 갑자기 든 불안
 
 The Smart Suburbanite에 글을 9개까지 발행했다. 아직 수익이나 트래픽, 검색 성과를 말할 단계는 아니다. 오히려 글이 하나씩 쌓일수록 다른 불안이 더 또렷해졌다.

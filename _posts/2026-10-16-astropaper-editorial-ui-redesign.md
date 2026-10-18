@@ -5,10 +5,10 @@ categories:
   - Dev Log
 tags:
   - Web Dev
-  - Frontend
+  - Smart Suburbanite
   - Autoblog
   - Dev Log
-description: "가볍고 빠른 AstroPaper 템플릿으로 시작했던 두 개의 영문 수익형 블로그. 하지만 독자와 애드센스 평가관의 눈에 '깃허브에서 흔히 보던 양산형 클론 블로그'로 비치는 순간 신뢰는 무너집니다. The Smart Suburbanite(크래프츠맨 주택 저널)와 The Noise Filter(시그널 테크 매거진)의 UI를 전면 리뉴얼하며 기본 템플릿의 흔적을 완벽히 지워낸 프론트엔드 분투기를 비포/애프터 실측 캡처와 함께 기록합니다."
+description: "가볍고 빠른 AstroPaper 템플릿으로 시작했던 두 개의 영문 수익형 블로그. 하지만 독자와 애드센스 평가관의 눈에 '깃허브에서 흔히 보던 양산형 클론 블로그'로 비치는 순간 신뢰는 무너진다. The Smart Suburbanite(크래프츠맨 주택 저널)와 The Noise Filter(시그널 테크 매거진)의 UI를 전면 리뉴얼하며 기본 템플릿의 흔적을 완벽히 지워낸 프론트엔드 분투기를 비포/애프터 실측 캡처와 함께 기록한다."
 date: 2026-10-16 20:45:00 +0900
 published: true
 image:

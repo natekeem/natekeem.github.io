@@ -17,8 +17,6 @@ image:
   alt: "Google AdSense 신청 전 10 posts, public polish, Search Console, sitemap wait, AdSense checklist를 점검하는 Project AI Autoblog 운영 QA 보드"
 ---
 
-# 애드센스 신청 직전엔 글보다 점검이 먼저였다
-
 ## 10개를 채우면 바로 신청해도 될 줄 알았다
 
 The Smart Suburbanite가 공개 글 10개를 채웠다. 처음 계획만 보면 다음 순서는 단순해 보였다. 글을 10개까지 만들고, 공개 상태를 확인하고, Google AdSense 신청 화면으로 넘어가면 될 것 같았다.

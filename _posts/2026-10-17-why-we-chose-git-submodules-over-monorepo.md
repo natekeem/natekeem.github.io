@@ -4,9 +4,9 @@ categories:
   - Dev Log
   - Autoblog
 tags:
-  - Git
   - Web Dev
-  - Architecture
+  - Autoblog
+  - QA
   - Dev Log
 description: "서로 다른 정적 사이트 3개를 한 프로젝트에서 굴릴 때 모노레포는 왜 지옥이 될까? Git Mode 160000 서브모듈 연합 구조로 의존성 지옥을 탈출하고 GitHub Actions 독립 배포를 달성한 실전 인프라 기록."
 date: 2026-10-17 15:00:00 +0900

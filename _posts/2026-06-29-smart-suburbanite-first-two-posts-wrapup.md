@@ -17,8 +17,6 @@ image:
   alt: "첫 두 개의 The Smart Suburbanite 글과 검수 체크리스트, RSS 및 이미지 이슈를 정리한 프로젝트 워크플로 보드"
 ---
 
-# 첫 수익형 블로그에서 검수 흐름을 먼저 시험했다
-
 ## 이번에 한 일
 
 The Smart Suburbanite 사이트에 첫 두 글을 발행했다.

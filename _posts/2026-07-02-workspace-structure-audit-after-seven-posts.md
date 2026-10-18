@@ -17,8 +17,6 @@ image:
   alt: "Project AI Autoblog의 docs, prompts, content_lab, Dev Blog, monetized_blogs, QA 흐름을 정리한 워크스페이스 운영 지도"
 ---
 
-# 폴더가 헷갈리기 시작해서 워크스페이스 지도를 만들었다
-
 ## 이번에는 글보다 작업 공간을 먼저 봤다
 
 이번에는 글을 하나 더 쓰는 대신, 작업 공간을 다시 봤다.

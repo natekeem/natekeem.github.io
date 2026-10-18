@@ -17,8 +17,6 @@ image:
   alt: "The Smart Suburbanite 첫 네 편의 글을 QA checklist 보드로 정리하고 YAML, RSS, pubDatetime, UTF-8, cover, social link 이슈를 표시한 Dev Blog cover concept"
 ---
 
-# AI 글쓰기보다 검수 체크리스트가 먼저 필요했다
-
 ## 시작하며
 
 The Smart Suburbanite에 공개 글 4개를 발행했다.

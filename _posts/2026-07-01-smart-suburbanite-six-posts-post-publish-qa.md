@@ -17,8 +17,6 @@ image:
   alt: "The Smart Suburbanite 글 6개 발행 후 RSS, 브라우저, 내부 링크, 배포, 출처 확인을 점검하는 post-publish QA 보드"
 ---
 
-# 발행 후에야 보이는 RSS와 내부 링크 QA
-
 ## 글 6개는 작은 숫자지만 운영 테스트로는 충분했다
 
 The Smart Suburbanite에 공개 글이 6개까지 쌓였다.

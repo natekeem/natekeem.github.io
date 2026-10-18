@@ -4,10 +4,10 @@ categories:
   - Project AI Autoblog
   - Dev Log
 tags:
-  - Prompt Engineering
-  - AI Autoblog
+  - AI
+  - Autoblog
+  - QA
   - Dev Log
-  - Web Dev
 description: "AI로 글을 뽑다 보면 왜 항상 어두운 방에서 맥북을 쳐다보는 판박이 사진만 나올까? 범인은 프롬프트에 금지어를 덕지덕지 붙여놓은 나 자신이었다. 족쇄를 풀고 표지와 본문 이미지를 사람 냄새나게 뜯어고친 기록."
 date: 2026-10-17 00:50:00 +0900
 published: true

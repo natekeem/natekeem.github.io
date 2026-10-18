@@ -16,8 +16,6 @@ image:
   alt: "GitHub Pages project path에서 smartsuburbanite.com custom domain으로 이어지는 Route 53, Search Console, Google AdSense review 흐름을 보여주는 Project AI Autoblog 인프라 지도"
 ---
 
-# 애드센스 신청 버튼 앞에서 결국 도메인을 붙였다
-
 ## 도메인은 나중 문제라고 생각했다
 
 처음에는 GitHub Pages project URL만으로도 충분할 거라고 생각했다. The Smart Suburbanite는 이미 공개 글 10개를 채웠고, About, Contact, Privacy, Disclosure 같은 trust page도 있었다. RSS와 sitemap도 열렸고, Search Console verification과 sitemap fallback 작업도 해 둔 상태였다.
