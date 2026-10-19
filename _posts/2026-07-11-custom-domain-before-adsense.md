@@ -1,6 +1,6 @@
 ---
 title: "애드센스 신청 버튼 앞에서 결국 도메인을 붙였다"
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - Smart Suburbanite
   - SEO

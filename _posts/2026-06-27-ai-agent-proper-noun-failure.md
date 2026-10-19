@@ -1,7 +1,7 @@
 ---
 title: "AI가 내 블로그 이름을 계속 바꾼 뒤 고유명사를 자동화하지 않기로 했다"
 date: 2026-06-27 18:00:00 +0900
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - AI
   - Autoblog

@@ -1,7 +1,7 @@
 ---
 title: "수익형 블로그 1호를 고르기 전에 다시 평가한 주제 후보 10개"
 date: 2026-06-28 09:00:00 +0900
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - AI
   - Autoblog

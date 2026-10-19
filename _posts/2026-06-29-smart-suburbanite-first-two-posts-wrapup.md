@@ -1,7 +1,7 @@
 ---
 title: "첫 수익형 블로그에서 검수 흐름을 먼저 시험했다"
 date: 2026-06-29 02:08:36 +0900
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - AI
   - Autoblog

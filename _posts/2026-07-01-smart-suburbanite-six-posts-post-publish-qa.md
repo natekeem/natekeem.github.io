@@ -1,7 +1,7 @@
 ---
 title: "발행 후에야 보이는 RSS와 내부 링크 QA"
 date: 2026-07-01 08:34:40 +0900
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - AI
   - Autoblog

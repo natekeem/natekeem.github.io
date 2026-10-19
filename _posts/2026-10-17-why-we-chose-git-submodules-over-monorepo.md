@@ -1,6 +1,6 @@
 ---
 title: "모노레포 버리고 깃 서브모듈로 갈아탄 이유 (1인 개발 아키텍처)"
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - Web Dev
   - Autoblog

@@ -1,7 +1,7 @@
 ---
 title: "애드센스 신청 직전엔 글보다 점검이 먼저였다"
 date: 2026-07-05 23:39:00 +0900
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - Autoblog
   - Smart Suburbanite

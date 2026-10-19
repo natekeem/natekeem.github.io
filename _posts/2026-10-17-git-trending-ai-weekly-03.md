@@ -1,6 +1,6 @@
 ---
 title: "[Git Trending AI #03] 이번 주 깃허브 인기 오픈소스 TOP 5"
-categories: [AI & Tech]
+categories: [AI & Tech, Git Trending]
 tags:
   - AI
   - Git Trending

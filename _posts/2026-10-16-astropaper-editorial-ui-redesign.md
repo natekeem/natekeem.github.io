@@ -1,6 +1,6 @@
 ---
 title: "AstroPaper 템플릿 냄새 지우기: 영문 블로그 UI 전면 개편기"
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - Web Dev
   - Smart Suburbanite

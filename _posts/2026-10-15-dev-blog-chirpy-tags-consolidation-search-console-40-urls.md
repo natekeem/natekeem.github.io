@@ -1,6 +1,6 @@
 ---
 title: "내 블로그 42개 태그 통폐합과 서치콘솔 40개 정예화 작업기"
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - SEO
   - Web Dev

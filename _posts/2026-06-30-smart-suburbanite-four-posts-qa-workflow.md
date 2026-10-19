@@ -1,7 +1,7 @@
 ---
 title: "AI 글쓰기보다 검수 체크리스트가 먼저 필요했다"
 date: 2026-06-30 09:00:00 +0900
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - AI
   - Autoblog

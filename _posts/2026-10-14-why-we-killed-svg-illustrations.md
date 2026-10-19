@@ -1,6 +1,6 @@
 ---
 title: "AI 티 나는 SVG 일러스트를 전면 폐기한 이유"
-categories: [Dev Log]
+categories: [Dev Log, Project AI Autoblog]
 tags:
   - AI
   - Smart Suburbanite
