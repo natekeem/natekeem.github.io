@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, initial-scale=1.0" />
+  <title>10가지 Claude 애니메이션 스타일 (1080×1920 Reels)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #18181b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* 1080x1920 고정 캔버스 컨테이너 (화면에 맞게 자동 스케일) */
+    #reels-stage {
+      width: 1080px;
+      height: 1920px;
+      background-color: #ecebe6;
+      background-image: radial-gradient(#c8c6be 2.2px, transparent 2.2px);
+      background-size: 28px 28px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 110px 64px 96px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+      transform-origin: center center;
+    }
+
+    /* 상단 제목 3줄 가운데 정렬 */
+    .header-box {
+      text-align: center;
+      margin-bottom: 68px;
+      z-index: 5;
+    }
+
+    .title-line-1 {
+      font-size: 86px;
+      font-weight: 900;
+      color: #141413;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .claude-serif {
+      font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 108px;
+      color: #d9653b;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 0 rgba(217, 101, 59, 0.12);
+    }
+
+    .title-line-2 {
+      font-size: 82px;
+      font-weight: 900;
+      color: #141413;
+      letter-spacing: -0.035em;
+      line-height: 1.16;
+      margin-top: 4px;
+    }
+
+    .title-line-3 {
+      font-size: 52px;
+      font-weight: 700;
+      color: #57534e;
+      letter-spacing: -0.02em;
+      margin-top: 14px;
+    }
+
+    /* 메인 좌우 분할 영역 */
+    .main-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 36px;
+      align-items: center;
+      min-height: 0;
+    }
+
+    /* 왼쪽: 1~10 스타일 목록 */
+    .style-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      padding-left: 8px;
+    }
+
+    .style-item {
+      font-size: 40px;
+      font-weight: 500;
+      color: #9ca3af;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .style-item .item-label {
+      position: relative;
+      display: inline-block;
+      padding: 4px 14px 6px 10px;
+      border-radius: 8px;
+      z-index: 1;
+    }
+
+    /* 지금 재생 중인 항목: 검정 굵은 글씨 + 주황 형광펜 */
+    .style-item.active {
+      font-weight: 900;
+      color: #111111;
+      transform: translateX(10px) scale(1.04);
+    }
+
+    .style-item.active .item-label::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: -6px;
+      bottom: 4px;
+      height: 62%;
+      background: linear-gradient(90deg, rgba(255, 138, 76, 0.88) 0%, rgba(249, 115, 22, 0.72) 100%);
+      border-radius: 6px 12px 4px 8px;
+      z-index: -1;
+      transform: rotate(-0.8deg);
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.22);
+    }
+
+    /* 오른쪽: 둥근 모서리 세로 카드 (그림자 있음) */
+    .card-wrapper {
+      width: 100%;
+      height: 1260px;
+      border-radius: 44px;
+      background: #0f172a;
+      box-shadow:
+        0 32px 70px -12px rgba(15, 23, 42, 0.38),
+        0 12px 28px -8px rgba(15, 23, 42, 0.22),
+        inset 0 0 0 4px rgba(255, 255, 255, 0.65);
+      position: relative;
+      overflow: hidden;
+      transform: scale(1);
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .card-wrapper.zoom-bump {
+      transform: scale(1.048);
+    }
+
+    #canvas-2d,
+    #canvas-3d {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* 상단 스타일 배지 & 타이머 바 */
+    .card-hud {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      right: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .hud-badge {
+      background: rgba(15, 23, 42, 0.76);
+      backdrop-filter: blur(10px);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 20px;
+      font-weight: 700;
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .hud-timer {
+      background: rgba(15, 23, 42, 0.76);
+      backdrop-filter: blur(10px);
+      color: #fb923c;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 20px;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      border: 1.5px solid rgba(251, 146, 60, 0.35);
+      white-space: nowrap;
+    }
+
+    /* 전환 시 흰색 플래시 오버레이 */
+    .flash-overlay {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 20;
+      transition: opacity 0.32s ease-out;
+    }
+
+    /* 하단 진행률 바 */
+    .progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.2);
+      z-index: 15;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #f97316, #fbbf24);
+    }
+  </style>
+</head>
+<body>
+  <div id="reels-stage">
+    <header class="header-box">
+      <div class="title-line-1">
+        <span>10가지</span>
+        <span class="claude-serif">Claude</span>
+      </div>
+      <div class="title-line-2">애니메이션 스타일</div>
+      <div class="title-line-3">(조회수 터지는)</div>
+    </header>
+
+    <div class="main-grid">
+      <ol class="style-list" id="style-list">
+        <li class="style-item active"><span class="item-label">1) 픽셀 아트</span></li>
+        <li class="style-item"><span class="item-label">2) 칠판 스타일</span></li>
+        <li class="style-item"><span class="item-label">3) 글로우 스케치</span></li>
+        <li class="style-item"><span class="item-label">4) PS2 스타일</span></li>
+        <li class="style-item"><span class="item-label">5) 코믹 아트</span></li>
+        <li class="style-item"><span class="item-label">6) 플랫 벡터</span></li>
+        <li class="style-item"><span class="item-label">7) 페이퍼 컷아웃</span></li>
+        <li class="style-item"><span class="item-label">8) CGI 모션</span></li>
+        <li class="style-item"><span class="item-label">9) 브릭 스타일</span></li>
+        <li class="style-item"><span class="item-label">10) 신스웨이브</span></li>
+      </ol>
+
+      <div class="card-wrapper" id="card-wrapper">
+        <canvas id="canvas-2d" width="546" height="1260"></canvas>
+        <canvas id="canvas-3d" width="546" height="1260"></canvas>
+
+        <div class="card-hud">
+          <div class="hud-badge" id="hud-badge">01 · PIXEL ART</div>
+          <div class="hud-timer" id="hud-timer">00.0s / 30.0s</div>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <div class="flash-overlay" id="flash-overlay"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 화면 크기에 맞춰 1080x1920 스테이지 스케일 자동 조절 (단독 실행 및 프리뷰 지원)
+    const stage = document.getElementById('reels-stage');
+    function fitStage() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('exact') === '1') {
+        stage.style.transform = 'none';
+        return;
+      }
+      const scale = Math.min(window.innerWidth / 1080, window.innerHeight / 1920) * 0.96;
+      stage.style.transform = `scale(${scale})`;
+    }
+    window.addEventListener('resize', fitStage);
+    fitStage();
+
+    const STYLE_META = [
+      { name: '01 · PIXEL ART', mode: '2d' },
+      { name: '02 · CHALKBOARD', mode: '2d' },
+      { name: '03 · GLOW SKETCH', mode: '2d' },
+      { name: '04 · PS2 LOW-POLY (Three.js)', mode: '3d' },
+      { name: '05 · COMIC POP ART', mode: '2d' },
+      { name: '06 · FLAT VECTOR', mode: '2d' },
+      { name: '07 · PAPER CUTOUT', mode: '2d' },
+      { name: '08 · CGI MOTION (Three.js)', mode: '3d' },
+      { name: '09 · BRICK BUILD (Three.js)', mode: '3d' },
+      { name: '10 · SYNTHWAVE 80s', mode: '2d' }
+    ];
+
+    const listItems = Array.from(document.querySelectorAll('.style-item'));
+    const cardWrapper = document.getElementById('card-wrapper');
+    const flashOverlay = document.getElementById('flash-overlay');
+    const hudBadge = document.getElementById('hud-badge');
+    const hudTimer = document.getElementById('hud-timer');
+    const progressFill = document.getElementById('progress-fill');
+
+    const canvas2d = document.getElementById('canvas-2d');
+    const ctx = canvas2d.getContext('2d');
+    const canvas3d = document.getElementById('canvas-3d');
+    const W = canvas2d.width;
+    const H = canvas2d.height;
+
+    // 픽셀 아트용 저해상도 오프스크린 버퍼
+    const pixelCanvas = document.createElement('canvas');
+    pixelCanvas.width = 91;
+    pixelCanvas.height = 210;
+    const pctx = pixelCanvas.getContext('2d');
+
+    // 구름 및 배경 파티클 시드 데이터
+    const clouds = [
+      { x: 90, y: 260, s: 1.15, speed: 95 },
+      { x: 340, y: 190, s: 0.85, speed: 70 },
+      { x: 480, y: 420, s: 1.05, speed: 110 },
+      { x: 200, y: 880, s: 1.25, speed: 125 },
+      { x: 420, y: 1020, s: 0.9, speed: 85 }
+    ];
+
+    // ==========================================
+    // Three.js 장면 구성 (4번 PS2, 8번 CGI, 9번 브릭)
+    // ==========================================
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas3d,
+      antialias: true,
+      alpha: false,
+      preserveDrawingBuffer: true
+    });
+    renderer.setSize(W, H);
+    renderer.shadowMap.enabled = true;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(40, W / H, 0.1, 200);
+    camera.position.set(0, 1.35, 16.5);
+    camera.lookAt(0, 0, 0);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.65);
+    scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xfff7ed, 1.15);
+    dirLight.position.set(6, 12, 9);
+    dirLight.castShadow = true;
+    scene.add(dirLight);
+
+    const rimLight = new THREE.DirectionalLight(0x38bdf8, 0.55);
+    rimLight.position.set(-7, -4, -5);
+    scene.add(rimLight);
+
+    // 1) PS2 로우폴리 그룹
+    const ps2Group = new THREE.Group();
+    scene.add(ps2Group);
+    let ps2Propeller;
+    {
+      const bodyMat = new THREE.MeshLambertMaterial({ color: 0xdc2626, flatShading: true });
+      const wingMat = new THREE.MeshLambertMaterial({ color: 0xfef08a, flatShading: true });
+      const darkMat = new THREE.MeshLambertMaterial({ color: 0x1e293b, flatShading: true });
+
+      const fuselage = new THREE.Mesh(new THREE.ConeGeometry(0.95, 4.2, 5), bodyMat);
+      fuselage.rotation.z = -Math.PI / 2;
+      ps2Group.add(fuselage);
+
+      const wingTop = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.16, 4.6), wingMat);
+      wingTop.position.set(0.2, 0.75, 0);
+      ps2Group.add(wingTop);
+
+      const wingBot = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.16, 4.2), bodyMat);
+      wingBot.position.set(0.1, -0.45, 0);
+      ps2Group.add(wingBot);
+
+      const tail = new THREE.Mesh(new THREE.ConeGeometry(0.55, 1.3, 4), bodyMat);
+      tail.position.set(-1.85, 0.65, 0);
+      ps2Group.add(tail);
+
+      ps2Propeller = new THREE.Mesh(new THREE.BoxGeometry(0.14, 2.2, 0.28), darkMat);
+      ps2Propeller.position.set(2.15, 0, 0);
+      ps2Group.add(ps2Propeller);
+
+      // PS2 로우폴리 메쉬 에지 라인 강조
+      ps2Group.children.forEach((mesh) => {
+        if (mesh.geometry) {
+          const edges = new THREE.EdgesGeometry(mesh.geometry);
+          const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x0f172a }));
+          mesh.add(line);
+        }
+      });
+    }
+
+    // 2) CGI 모션 그룹 (매끄러운 스튜디오 셰이딩)
+    const cgiGroup = new THREE.Group();
+    scene.add(cgiGroup);
+    let cgiPropeller;
+    {
+      const redPbr = new THREE.MeshStandardMaterial({ color: 0xef4444, roughness: 0.22, metalness: 0.35 });
+      const creamPbr = new THREE.MeshStandardMaterial({ color: 0xfffbeb, roughness: 0.3, metalness: 0.1 });
+      const chromePbr = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.12, metalness: 0.85 });
+      const glassPbr = new THREE.MeshStandardMaterial({ color: 0x38bdf8, roughness: 0.08, metalness: 0.5 });
+
+      const body = new THREE.Mesh(new THREE.CylinderGeometry(0.68, 0.42, 3.6, 28), redPbr);
+      body.rotation.z = Math.PI / 2;
+      cgiGroup.add(body);
+
+      const nose = new THREE.Mesh(new THREE.SphereGeometry(0.68, 28, 28), chromePbr);
+      nose.position.set(1.8, 0, 0);
+      cgiGroup.add(nose);
+
+      const canopy = new THREE.Mesh(new THREE.SphereGeometry(0.54, 24, 24), glassPbr);
+      canopy.scale.set(1.45, 0.85, 0.85);
+      canopy.position.set(0.25, 0.55, 0);
+      cgiGroup.add(canopy);
+
+      const mainWing = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.14, 5.2), creamPbr);
+      mainWing.position.set(0.3, 0.82, 0);
+      cgiGroup.add(mainWing);
+
+      const lowerWing = new THREE.Mesh(new THREE.BoxGeometry(1.05, 0.14, 4.6), redPbr);
+      lowerWing.position.set(0.2, -0.48, 0);
+      cgiGroup.add(lowerWing);
+
+      const strutL = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.3, 12), chromePbr);
+      strutL.position.set(0.25, 0.18, 1.65);
+      cgiGroup.add(strutL);
+
+      const strutR = strutL.clone();
+      strutR.position.z = -1.65;
+      cgiGroup.add(strutR);
+
+      const tailFin = new THREE.Mesh(new THREE.BoxGeometry(0.75, 1.15, 0.14), redPbr);
+      tailFin.position.set(-1.65, 0.55, 0);
+      cgiGroup.add(tailFin);
+
+      cgiPropeller = new THREE.Group();
+      const blade1 = new THREE.Mesh(new THREE.BoxGeometry(0.08, 2.35, 0.24), chromePbr);
+      const blade2 = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.24, 2.35), chromePbr);
+      cgiPropeller.add(blade1, blade2);
+      cgiPropeller.position.set(2.52, 0, 0);
+      cgiGroup.add(cgiPropeller);
+    }
+
+    // 3) 브릭 스타일 그룹 (레고 스터드 블록 조립 비행기)
+    const brickGroup = new THREE.Group();
+    scene.add(brickGroup);
+    let brickPropeller;
+    {
+      const brickRed = new THREE.MeshStandardMaterial({ color: 0xdc2626, roughness: 0.35 });
+      const brickYellow = new THREE.MeshStandardMaterial({ color: 0xfacc15, roughness: 0.35 });
+      const brickDark = new THREE.MeshStandardMaterial({ color: 0x1f2937, roughness: 0.4 });
+      const brickWhite = new THREE.MeshStandardMaterial({ color: 0xf8fafc, roughness: 0.35 });
+
+      function addBrick(bx, by, bz, sx, sy, sz, mat) {
+        const g = new THREE.Group();
+        const box = new THREE.Mesh(new THREE.BoxGeometry(sx * 0.45, sy * 0.45, sz * 0.45), mat);
+        g.add(box);
+        for (let ix = 0; ix < sx; ix++) {
+          for (let iz = 0; iz < sz; iz++) {
+            const stud = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.1, 12), mat);
+            stud.position.set(
+              (ix - (sx - 1) / 2) * 0.45,
+              (sy * 0.45) / 2 + 0.05,
+              (iz - (sz - 1) / 2) * 0.45
+            );
+            g.add(stud);
+          }
+        }
+        g.position.set(bx * 0.45, by * 0.45, bz * 0.45);
+        brickGroup.add(g);
+      }
+
+      // 동체 브릭
+      addBrick(0, 0, 0, 8, 2, 2, brickRed);
+      addBrick(0.5, 1.5, 0, 4, 1, 2, brickWhite);
+      addBrick(-3.0, 1.8, 0, 2, 2, 1, brickRed);
+      // 날개 브릭
+      addBrick(0.5, 2.3, 0, 3, 0.6, 10, brickYellow);
+      addBrick(0.5, -1.2, 0, 3, 0.6, 9, brickRed);
+      // 기수
+      addBrick(4.2, 0, 0, 1, 2, 2, brickYellow);
+
+      brickPropeller = new THREE.Group();
+      const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 0.25, 16), brickDark);
+      hub.rotation.z = Math.PI / 2;
+      const bBlade1 = new THREE.Mesh(new THREE.BoxGeometry(0.12, 2.2, 0.38), brickDark);
+      const bBlade2 = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.38, 2.2), brickDark);
+      brickPropeller.add(hub, bBlade1, bBlade2);
+      brickPropeller.position.set(4.9 * 0.45, 0, 0);
+      brickGroup.add(brickPropeller);
+    }
+
+    // 3D 배경 구름/지형 오브젝트
+    const bg3dClouds = [];
+    const cloudMat3d = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.75, flatShading: true });
+    for (let i = 0; i < 6; i++) {
+      const cGroup = new THREE.Group();
+      const m1 = new THREE.Mesh(new THREE.DodecahedronGeometry(0.75, 1), cloudMat3d);
+      const m2 = new THREE.Mesh(new THREE.DodecahedronGeometry(0.55, 1), cloudMat3d);
+      m2.position.set(0.65, -0.1, 0);
+      const m3 = new THREE.Mesh(new THREE.DodecahedronGeometry(0.5, 1), cloudMat3d);
+      m3.position.set(-0.6, -0.15, 0);
+      cGroup.add(m1, m2, m3);
+      cGroup.position.set((i - 2.5) * 3.2, (i % 2 === 0 ? 2.6 : -2.6), -3.5);
+      scene.add(cGroup);
+      bg3dClouds.push(cGroup);
+    }
+
+    function render3DStyle(styleIndex, elapsed) {
+      ps2Group.visible = styleIndex === 3;
+      cgiGroup.visible = styleIndex === 7;
+      brickGroup.visible = styleIndex === 8;
+
+      const bobY = Math.sin(elapsed * 4.2) * 0.42;
+      const pitchZ = Math.sin(elapsed * 4.2 + 0.5) * 0.08;
+      const rollX = Math.cos(elapsed * 3.1) * 0.12;
+
+      if (styleIndex === 3) {
+        // 4) PS2 로우폴리 스타일 (로우폴리 각진 에지 + 빈티지 콘솔 포그 색감)
+        scene.background = new THREE.Color(0x475569);
+        renderer.setPixelRatio(1.0);
+        ps2Group.position.set(0, bobY, 0);
+        ps2Group.rotation.set(rollX, -0.35, pitchZ);
+        ps2Propeller.rotation.x = elapsed * 24;
+      } else if (styleIndex === 7) {
+        // 8) CGI 모션 (고해상도 스튜디오 라이팅)
+        scene.background = new THREE.Color(0x0ea5e9);
+        renderer.setPixelRatio(1.0);
+        cgiGroup.position.set(0, bobY, 0);
+        cgiGroup.rotation.set(rollX * 0.8, -0.42, pitchZ);
+        cgiPropeller.rotation.x = elapsed * 32;
+      } else if (styleIndex === 8) {
+        // 9) 브릭 스타일 (스톱모션 양자화 프레임)
+        scene.background = new THREE.Color(0xfef08a);
+        renderer.setPixelRatio(1.0);
+        const steppedTime = Math.floor(elapsed * 12) / 12;
+        brickGroup.position.set(0, Math.sin(steppedTime * 4.2) * 0.42, 0);
+        brickGroup.rotation.set(0.15, -0.48, Math.sin(steppedTime * 4.2) * 0.07);
+        brickPropeller.rotation.x = steppedTime * 26;
+      }
+
+      bg3dClouds.forEach((c, idx) => {
+        const xPos = ((6 - ((elapsed * 2.8 + idx * 1.9) % 12)));
+        c.position.x = xPos;
+      });
+
+      renderer.render(scene, camera);
+    }
+
+    // ==========================================
+    // 2D 공통 비행기 드로잉 헬퍼 (스타일별 분기)
+    // ==========================================
+    function drawCloud2D(targetCtx, cx, cy, scale, fill, stroke, lineWidth = 0) {
+      targetCtx.save();
+      targetCtx.translate(cx, cy);
+      targetCtx.scale(scale, scale);
+      targetCtx.beginPath();
+      targetCtx.arc(-38, 8, 26, 0, Math.PI * 2);
+      targetCtx.arc(0, -8, 36, 0, Math.PI * 2);
+      targetCtx.arc(40, 6, 28, 0, Math.PI * 2);
+      targetCtx.arc(16, 18, 26, 0, Math.PI * 2);
+      targetCtx.arc(-18, 18, 24, 0, Math.PI * 2);
+      if (fill) {
+        targetCtx.fillStyle = fill;
+        targetCtx.fill();
+      }
+      if (stroke && lineWidth > 0) {
+        targetCtx.strokeStyle = stroke;
+        targetCtx.lineWidth = lineWidth;
+        targetCtx.stroke();
+      }
+      targetCtx.restore();
+    }
+
+    function drawAirplane2D(targetCtx, cx, cy, angle, elapsed, opts) {
+      targetCtx.save();
+      targetCtx.translate(cx, cy);
+      targetCtx.rotate(angle);
+
+      const {
+        bodyFill = '#ef4444',
+        wingFill = '#facc15',
+        cockpitFill = '#bae6fd',
+        strokeColor = '#111827',
+        strokeWidth = 4,
+        shadowBlur = 0,
+        shadowColor = 'transparent',
+        paperShadow = false
+      } = opts;
+
+      if (shadowBlur > 0) {
+        targetCtx.shadowBlur = shadowBlur;
+        targetCtx.shadowColor = shadowColor;
+      }
+      if (paperShadow) {
+        targetCtx.shadowColor = 'rgba(0,0,0,0.28)';
+        targetCtx.shadowBlur = 16;
+        targetCtx.shadowOffsetX = -6;
+        targetCtx.shadowOffsetY = 10;
+      }
+
+      const paint = (fill) => {
+        if (fill) {
+          targetCtx.fillStyle = fill;
+          targetCtx.fill();
+        }
+        if (strokeWidth > 0) {
+          targetCtx.strokeStyle = strokeColor;
+          targetCtx.lineWidth = strokeWidth;
+          targetCtx.lineJoin = 'round';
+          targetCtx.lineCap = 'round';
+          targetCtx.stroke();
+        }
+      };
+
+      // 꼬리 날개
+      targetCtx.beginPath();
+      targetCtx.moveTo(-125, -4);
+      targetCtx.lineTo(-162, -58);
+      targetCtx.lineTo(-112, -52);
+      targetCtx.lineTo(-92, -6);
+      targetCtx.closePath();
+      paint(bodyFill);
+
+      // 하단 날개 지지대
+      targetCtx.beginPath();
+      targetCtx.rect(-12, -56, 12, 82);
+      targetCtx.rect(42, -56, 12, 82);
+      paint(wingFill);
+
+      // 조종석 캐노피
+      targetCtx.beginPath();
+      targetCtx.ellipse(-10, -24, 38, 22, 0, Math.PI, 0);
+      paint(cockpitFill);
+
+      // 메인 동체 (가운데에서 오른쪽을 향해 비행)
+      targetCtx.beginPath();
+      targetCtx.moveTo(-145, -8);
+      targetCtx.quadraticCurveTo(-20, -36, 98, -22);
+      targetCtx.quadraticCurveTo(132, -16, 136, 6);
+      targetCtx.quadraticCurveTo(128, 30, 88, 32);
+      targetCtx.lineTo(-136, 18);
+      targetCtx.closePath();
+      paint(bodyFill);
+
+      // 동체 측면 화이트 스트라이프
+      targetCtx.beginPath();
+      targetCtx.moveTo(-110, 4);
+      targetCtx.lineTo(95, 6);
+      targetCtx.lineWidth = Math.max(strokeWidth, 6);
+      targetCtx.strokeStyle = wingFill;
+      targetCtx.stroke();
+
+      // 상단 복엽 날개
+      targetCtx.beginPath();
+      targetCtx.roundRect(-42, -68, 128, 22, 10);
+      paint(wingFill);
+
+      // 하단 복엽 날개
+      targetCtx.beginPath();
+      targetCtx.roundRect(-34, 22, 118, 20, 9);
+      paint(wingFill);
+
+      // 랜딩기어 바퀴
+      targetCtx.beginPath();
+      targetCtx.moveTo(15, 32);
+      targetCtx.lineTo(28, 66);
+      targetCtx.strokeStyle = strokeColor;
+      targetCtx.lineWidth = strokeWidth + 2;
+      targetCtx.stroke();
+
+      targetCtx.beginPath();
+      targetCtx.arc(28, 70, 16, 0, Math.PI * 2);
+      paint('#1f2937');
+
+      // 기수 노즈콘
+      targetCtx.beginPath();
+      targetCtx.moveTo(126, -18);
+      targetCtx.lineTo(148, 4);
+      targetCtx.lineTo(126, 24);
+      targetCtx.closePath();
+      paint(wingFill);
+
+      // 회전하는 프로펠러
+      const propHeight = 12 + Math.abs(Math.sin(elapsed * 38)) * 84;
+      targetCtx.beginPath();
+      targetCtx.ellipse(152, 4, 9, propHeight, 0, 0, Math.PI * 2);
+      paint(cockpitFill);
+
+      targetCtx.restore();
+    }
+
+    function render2DStyle(styleIndex, elapsed) {
+      ctx.save();
+      ctx.clearRect(0, 0, W, H);
+
+      const planeX = W * 0.52;
+      const planeY = H * 0.5 + Math.sin(elapsed * 4.2) * 34;
+      const planeAngle = Math.sin(elapsed * 4.2 + 0.5) * 0.075;
+
+      if (styleIndex === 0) {
+        // 1) 픽셀 아트 (오프스크린 저해상도 렌더링 후 Nearest-Neighbor 확대)
+        pctx.fillStyle = '#38bdf8';
+        pctx.fillRect(0, 0, pixelCanvas.width, pixelCanvas.height);
+
+        // 픽셀 구름
+        pctx.fillStyle = '#ffffff';
+        clouds.forEach((c) => {
+          const cx = ((c.x - elapsed * c.speed) % (W + 160) + (W + 160)) % (W + 160) - 80;
+          pctx.fillRect(Math.floor(cx / 6) - 8, Math.floor(c.y / 6), 16, 5);
+          pctx.fillRect(Math.floor(cx / 6) - 5, Math.floor(c.y / 6) - 3, 10, 3);
+        });
+
+        // 픽셀 산맥 배경
+        pctx.fillStyle = '#15803d';
+        for (let x = 0; x < pixelCanvas.width; x += 6) {
+          const h = 18 + Math.floor(Math.sin((x + elapsed * 18) * 0.15) * 10);
+          pctx.fillRect(x, pixelCanvas.height - h, 6, h);
+        }
+
+        // 픽셀 비행기
+        pctx.save();
+        pctx.scale(1 / 6, 1 / 6);
+        drawAirplane2D(pctx, planeX, planeY, planeAngle, elapsed, {
+          bodyFill: '#ef4444',
+          wingFill: '#fde047',
+          cockpitFill: '#e0f2fe',
+          strokeColor: '#111827',
+          strokeWidth: 8
+        });
+        pctx.restore();
+
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(pixelCanvas, 0, 0, W, H);
+        ctx.imageSmoothingEnabled = true;
+
+      } else if (styleIndex === 1) {
+        // 2) 칠판 스타일
+        ctx.fillStyle = '#1b2e23';
+        ctx.fillRect(0, 0, W, H);
+
+        // 분필 가루 질감 & 수식
+        ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+        ctx.lineWidth = 1;
+        for (let y = 80; y < H; y += 70) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(W, y);
+          ctx.stroke();
+        }
+        ctx.fillStyle = 'rgba(255,255,255,0.22)';
+        ctx.font = 'italic 26px Georgia, serif';
+        ctx.fillText('L = ½ ρ v² S CL', 48, 210);
+        ctx.fillText('Δx = v₀t + ½at²', 310, 980);
+
+        clouds.forEach((c) => {
+          const cx = ((c.x - elapsed * c.speed) % (W + 180) + (W + 180)) % (W + 180) - 90;
+          drawCloud2D(ctx, cx, c.y, c.s, null, 'rgba(255,255,255,0.65)', 3);
+        });
+
+        drawAirplane2D(ctx, planeX, planeY, planeAngle, elapsed, {
+          bodyFill: 'rgba(248, 113, 113, 0.28)',
+          wingFill: 'rgba(253, 224, 71, 0.25)',
+          cockpitFill: null,
+          strokeColor: '#f8fafc',
+          strokeWidth: 4.5
+        });
+
+      } else if (styleIndex === 2) {
+        // 3) 글로우 스케치
+        ctx.fillStyle = '#060814';
+        ctx.fillRect(0, 0, W, H);
+
+        // 네온 그리드
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.14)';
+        ctx.lineWidth = 1;
+        const offset = (elapsed * 90) % 48;
+        for (let x = -offset; x < W; x += 48) {
+          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+        }
+        for (let y = 0; y < H; y += 48) {
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+        }
+
+        clouds.forEach((c) => {
+          const cx = ((c.x - elapsed * c.speed) % (W + 180) + (W + 180)) % (W + 180) - 90;
+          drawCloud2D(ctx, cx, c.y, c.s, null, '#38bdf8', 2.5);
+        });
+
+        drawAirplane2D(ctx, planeX, planeY, planeAngle, elapsed, {
+          bodyFill: 'rgba(244, 63, 94, 0.15)',
+          wingFill: 'rgba(34, 211, 238, 0.15)',
+          cockpitFill: 'rgba(168, 85, 247, 0.2)',
+          strokeColor: '#fb7185',
+          strokeWidth: 4,
+          shadowBlur: 24,
+          shadowColor: '#f43f5e'
+        });
+
+      } else if (styleIndex === 4) {
+        // 5) 코믹 아트 (만화 망점 + 집중선 + 굵은 먹선)
+        ctx.fillStyle = '#fef08a';
+        ctx.fillRect(0, 0, W, H);
+
+        // 벤데이 망점
+        ctx.fillStyle = 'rgba(239, 68, 68, 0.22)';
+        for (let x = 12; x < W; x += 24) {
+          for (let y = 12; y < H; y += 24) {
+            ctx.beginPath();
+            ctx.arc(x, y, 4.5, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+
+        // 스피드 라인
+        ctx.strokeStyle = '#111827';
+        ctx.lineWidth = 4;
+        for (let i = 0; i < 9; i++) {
+          const ly = 160 + i * 125;
+          const lx = ((W - (elapsed * 520 + i * 130) % (W + 220)));
+          ctx.beginPath();
+          ctx.moveTo(lx, ly);
+          ctx.lineTo(lx + 140, ly);
+          ctx.stroke();
+        }
+
+        clouds.forEach((c) => {
+          const cx = ((c.x - elapsed * c.speed * 1.3) % (W + 180) + (W + 180)) % (W + 180) - 90;
+          drawCloud2D(ctx, cx, c.y, c.s, '#ffffff', '#000000', 6);
+        });
+
+        drawAirplane2D(ctx, planeX, planeY, planeAngle, elapsed, {
+          bodyFill: '#ef4444',
+          wingFill: '#38bdf8',
+          cockpitFill: '#ffffff',
+          strokeColor: '#000000',
+          strokeWidth: 7.5
+        });
+
+        ctx.fillStyle = '#111827';
+        ctx.font = '900 44px Impact, sans-serif';
+        ctx.fillText('VROOOOM!!', 64, planeY - 120);
+
+      } else if (styleIndex === 5) {
+        // 6) 플랫 벡터 (무테 미니멀 모던 일러스트)
+        const grad = ctx.createLinearGradient(0, 0, 0, H);
+        grad.addColorStop(0, '#38bdf8');
+        grad.addColorStop(1, '#e0f2fe');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, W, H);
+
+        // 태양과 플랫 구름
+        ctx.fillStyle = '#fde047';
+        ctx.beginPath();
+        ctx.arc(W * 0.78, 250, 74, 0, Math.PI * 2);
+        ctx.fill();
+
+        clouds.forEach((c) => {
+          const cx = ((c.x - elapsed * c.speed) % (W + 180) + (W + 180)) % (W + 180) - 90;
+          drawCloud2D(ctx, cx, c.y, c.s, 'rgba(255,255,255,0.92)', null, 0);
+        });
+
+        drawAirplane2D(ctx, planeX, planeY, planeAngle, elapsed, {
+          bodyFill: '#f43f5e',
+          wingFill: '#fb923c',
+          cockpitFill: '#ffffff',
+          strokeColor: 'transparent',
+          strokeWidth: 0
+        });
+
+      } else if (styleIndex === 6) {
+        // 7) 페이퍼 컷아웃 (다층 색종이 그림자 콜라주)
+        ctx.fillStyle = '#93c5fd';
+        ctx.fillRect(0, 0, W, H);
+
+        // 종이 언덕 레이어
+        ctx.save();
+        ctx.shadowColor = 'rgba(0,0,0,0.25)';
+        ctx.shadowBlur = 18;
+        ctx.shadowOffsetY = -8;
+        ctx.fillStyle = '#60a5fa';
+        ctx.beginPath();
+        ctx.arc(W * 0.3, H + 60, 420, Math.PI, 0);
+        ctx.fill();
+        ctx.fillStyle = '#3b82f6';
+        ctx.beginPath();
+        ctx.arc(W * 0.75, H + 80, 380, Math.PI, 0);
+        ctx.fill();
+        ctx.restore();
+
+        clouds.forEach((c) => {
+          const cx = ((c.x - elapsed * c.speed) % (W + 180) + (W + 180)) % (W + 180) - 90;
+          ctx.save();
+          ctx.shadowColor = 'rgba(0,0,0,0.22)';
+          ctx.shadowBlur = 14;
+          ctx.shadowOffsetX = -5;
+          ctx.shadowOffsetY = 9;
+          drawCloud2D(ctx, cx, c.y, c.s, '#fffbeb', '#fef3c7', 2);
+          ctx.restore();
+        });
+
+        drawAirplane2D(ctx, planeX, planeY, planeAngle, elapsed, {
+          bodyFill: '#e11d48',
+          wingFill: '#fde047',
+          cockpitFill: '#f8fafc',
+          strokeColor: '#ffffff',
+          strokeWidth: 3,
+          paperShadow: true
+        });
+
+      } else if (styleIndex === 9) {
+        // 10) 신스웨이브 (80년대 레트로 네온 선셋 & 와이어프레임 그리드)
+        const sGrad = ctx.createLinearGradient(0, 0, 0, H);
+        sGrad.addColorStop(0, '#090418');
+        sGrad.addColorStop(0.58, '#4c1d95');
+        sGrad.addColorStop(0.62, '#ec4899');
+        sGrad.addColorStop(1, '#0f0728');
+        ctx.fillStyle = sGrad;
+        ctx.fillRect(0, 0, W, H);
+
+        // 레트로 스트라이프 태양
+        const sunY = H * 0.48;
+        const sunGrad = ctx.createLinearGradient(0, sunY - 140, 0, sunY + 140);
+        sunGrad.addColorStop(0, '#fde047');
+        sunGrad.addColorStop(1, '#f43f5e');
+        ctx.fillStyle = sunGrad;
+        ctx.beginPath();
+        ctx.arc(W / 2, sunY, 138, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#3b0764';
+        for (let sy = sunY + 10; sy < sunY + 140; sy += 22) {
+          ctx.fillRect(W / 2 - 150, sy, 300, (sy - sunY) * 0.08 + 4);
+        }
+
+        // 하단 원근 네온 그리드
+        const horizon = H * 0.62;
+        ctx.strokeStyle = '#22d3ee';
+        ctx.lineWidth = 2;
+        for (let i = -8; i <= 8; i++) {
+          ctx.beginPath();
+          ctx.moveTo(W / 2 + i * 22, horizon);
+          ctx.lineTo(W / 2 + i * 145, H);
+          ctx.stroke();
+        }
+        const gridShift = (elapsed * 120) % 36;
+        for (let y = horizon + gridShift * 0.3; y < H; y += (y - horizon) * 0.22 + 8) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(W, y);
+          ctx.stroke();
+        }
+
+        drawAirplane2D(ctx, planeX, planeY, planeAngle, elapsed, {
+          bodyFill: '#db2777',
+          wingFill: '#22d3ee',
+          cockpitFill: '#fde047',
+          strokeColor: '#f472b6',
+          strokeWidth: 4,
+          shadowBlur: 22,
+          shadowColor: '#22d3ee'
+        });
+      }
+
+      ctx.restore();
+    }
+
+    // ==========================================
+    // 메인 루프 & 외부 타임스탬프 제어 API (캡처 자동화용)
+    // ==========================================
+    let currentStyleIndex = -1;
+    let manualTime = null;
+    const startTime = performance.now();
+
+    function updateSceneAtTime(sec) {
+      const loopedSec = ((sec % 30) + 30) % 30;
+      const idx = Math.min(9, Math.floor(loopedSec / 3));
+
+      if (idx !== currentStyleIndex) {
+        currentStyleIndex = idx;
+        listItems.forEach((li, i) => li.classList.toggle('active', i === idx));
+        hudBadge.textContent = STYLE_META[idx].name;
+
+        // 전환 시 카드 줌인 + 화이트 플래시 (수동 타임스탬프 캡처 모드가 아닐 때만 동작)
+        if (manualTime === null) {
+          cardWrapper.classList.add('zoom-bump');
+          flashOverlay.style.opacity = '0.88';
+          setTimeout(() => {
+            cardWrapper.classList.remove('zoom-bump');
+            flashOverlay.style.opacity = '0';
+          }, 180);
+        }
+      }
+
+      hudTimer.textContent = `${loopedSec.toFixed(1).padStart(4, '0')}s / 30.0s`;
+      progressFill.style.width = `${(loopedSec / 30) * 100}%`;
+
+      const is3D = STYLE_META[idx].mode === '3d';
+      canvas2d.style.display = is3D ? 'none' : 'block';
+      canvas3d.style.display = is3D ? 'block' : 'none';
+
+      if (is3D) {
+        render3DStyle(idx, loopedSec);
+      } else {
+        render2DStyle(idx, loopedSec);
+      }
+    }
+
+    // URL 쿼리(?t=4.5)로 특정 초를 고정 렌더링할 수 있게 지원
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('t')) {
+      manualTime = parseFloat(urlParams.get('t'));
+    }
+
+    window.__setReelsTime = (t) => {
+      manualTime = t;
+      updateSceneAtTime(t);
+      flashOverlay.style.opacity = '0';
+      cardWrapper.classList.remove('zoom-bump');
+    };
+
+    function tick(now) {
+      if (manualTime !== null) {
+        updateSceneAtTime(manualTime);
+      } else {
+        const elapsed = (now - startTime) / 1000;
+        updateSceneAtTime(elapsed);
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  </script>
+</body>
+</html>
