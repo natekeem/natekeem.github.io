@@ -42,7 +42,9 @@ LLM 모델 자체의 추론 성능이 상향 평준화되면서 개발 현장의
 현재성  릴리스 v1.19.0, 2026-11-08 커밋 확인
 ```
 
-![Repomix 로컬 및 원격 저장소 AI 컨텍스트 패킹 파이프라인](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/01-repomix-pack-pipeline.png)
+![Repomix 공식 브라우저 확장 및 XML/Markdown 패킹 옵션 화면 (출처: yamadashy/repomix, MIT)](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/01-repomix-official-screenshot.png)
+
+![패킹된 repomix-output 파일을 Claude에 첨부해 코드베이스를 분석하는 공식 예시 화면 (출처: yamadashy/repomix, MIT)](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/01b-repomix-claude-usage.png)
 
 Claude나 ChatGPT 웹 인터페이스에 아키텍처 리팩터링을 맡길 때 파일 수십 개를 일일이 복사해 붙여넣는 건 고역이다. `Repomix`는 프로젝트 루트에서 명령어 한 줄만 실행하면 `.gitignore` 규칙을 준수해 불필요한 빌드 산출물을 걸러내고, 전체 디렉터리 트리와 각 파일의 소스를 하나의 `repomix-output.xml` 또는 마크다운 파일로 묶어준다.
 
@@ -74,7 +76,7 @@ npx repomix --remote yamadashy/repomix --compress --output repomix-summary.xml
 현재성  릴리스 v0.1.9, 2026-11-07 커밋 확인
 ```
 
-![Microsoft MarkItDown 비정형 문서 마크다운 변환 계층](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/02-markitdown-conversion-layers.png)
+![Microsoft MarkItDown 공식 GitHub 저장소 및 릴리스 화면 캡처](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/02-markitdown-github-repo.png)
 
 현업의 요구사항은 친절하게 마크다운으로 오지 않는다. 기획서는 `.pptx` 슬라이드에 들어 있고, 정산 내역은 `.xlsx` 다중 시트에, 계약서와 표준 규격은 `.pdf`나 `.docx`로 전달된다. 마이크로소프트 AutoGen 팀에서 시작해 독립 유틸리티로 발전한 `MarkItDown`은 이런 오피스 문서와 압축 파일(`.zip`), 오디오 메타데이터까지 **LLM이 가장 잘 읽는 마크다운 표와 헤딩 구조**로 일괄 변환한다.
 
@@ -104,7 +106,9 @@ markitdown quarterly-architecture-review.pptx -o review.md
 현재성  릴리스 0.13.14, 2026-11-08 커밋 확인
 ```
 
-![Browser-Use Playwright DOM 인덱싱 기반 웹 에이전트 제어 루프](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/03-browser-use-dom-agent-loop.png)
+![Browser-Use 공식 저장소의 실제 브라우저 자율 제어 데모 GIF (출처: browser-use/browser-use, MIT)](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/03-browser-use-demo-1.gif)
+
+![Browser-Use 공식 저장소의 모델별 태스크 비용 대비 성능 벤치마크 차트 (출처: browser-use/browser-use, MIT)](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/03b-browser-use-benchmark.jpg)
 
 웹 자동화 에이전트를 만들 때 흔히 부딪히는 벽은 두 가지다. 생짜 HTML DOM 전체를 LLM에 넘기면 수만 토큰이 순식간에 증발하고, 반대로 화면 캡처(Vision) 좌표에만 의존하면 버튼 위치가 몇 픽셀만 어긋나도 클릭이 빗나간다.
 
@@ -134,7 +138,9 @@ playwright install chromium
 현재성  릴리스 v2.66.0, 2026-11-08 커밋 확인
 ```
 
-![PydanticAI 타입 안전 의존성 주입과 구조화 출력 검증 아키텍처](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/04-pydantic-ai-type-safe-agent.png)
+![PydanticAI 공식 문서의 Logfire 기반 에이전트 툴 호출 트레이스 화면 (출처: pydantic/pydantic-ai, MIT)](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/04-pydantic-ai-logfire-trace.png)
+
+![PydanticAI의 OpenTelemetry 터미널 UI(otel-tui) 실행 트레이스 화면 (출처: pydantic/pydantic-ai, MIT)](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/04b-pydantic-ai-otel-tui.png)
 
 파이썬 생태계의 표준 검증 라이브러리인 Pydantic 코어 팀이 직접 만든 에이전트 프레임워크다. 거대한 추상화 계층으로 악명 높은 기존 프레임워크들과 달리, FastAPI를 써본 개발자라면 10분 만에 이해할 수 있는 **명시적 타입 힌트(`Agent[DepsT, OutputT]`)와 의존성 주입(`RunContext`)**을 전면에 내세웠다.
 
@@ -165,7 +171,7 @@ pip install "pydantic-ai-slim[anthropic]"
 현재성  릴리스 v2.11.0, 2026-11-08 커밋 확인
 ```
 
-![Firecrawl 동적 SPA 렌더링 및 LLM 정제 마크다운 추출 엔진](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/05-firecrawl-scrape-crawl-map.png)
+![Firecrawl 공식 웹사이트의 Search·Scrape·Map·Crawl 라이브 플레이그라운드 화면 캡처](/assets/img/posts/2026-11-08-git-trending-ai-weekly-05/05-firecrawl-live-playground.png)
 
 외부 기술 문서나 경쟁사 릴리스 노트를 수집해 RAG 시스템을 구축할 때 `curl`이나 단순 `BeautifulSoup`만으로는 한계가 뚜렷하다. CSR(클라이언트 사이드 렌더링)로 돌아가는 SPA 페이지는 빈 껍데기만 내려오고, 어렵게 HTML을 긁어와도 상단 내비게이션 바와 푸터 링크가 본문보다 더 많은 토큰을 잡아먹는다.
 
