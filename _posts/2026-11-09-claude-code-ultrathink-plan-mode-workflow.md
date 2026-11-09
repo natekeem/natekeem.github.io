@@ -1,5 +1,5 @@
 ---
-title: "클로드 코드 울트라 모드(ultrathink)와 Plan 워크플로우 정리"
+title: "클로드 코드 울트라 모드와 플랜 모드 실전 워크플로우"
 categories: [AI & Tech, Claude]
 tags: [AI, Dev Log, Web Dev]
 description: "Claude Code의 확장 사고 키워드 계층(think 4,000토큰부터 ultrathink 31,999토큰까지)과 Shift+Tab Plan 모드, /model opusplan, 서브에이전트 컨텍스트 격리를 결합한 실전 워크플로우를 정리했다."
