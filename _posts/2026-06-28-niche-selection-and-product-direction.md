@@ -90,7 +90,7 @@ Dev Blog는 이 과정을 기록하는 공간이다. Proof Blog는 실제 수익
 | 9 | **Pet Tech & Comfort for Older Pet Owners** | 40대 이상 반려동물 가구 | 3.5 | 3.8 | 3.5 | 4.2 | 4.0 | 3.5 | **71** | 보조 후보 |
 | 10 | **Gen X Personal Finance Tools** | 40~60대 은퇴 준비층 | 4.5 | 2.8 | 1.8 | 4.0 | 2.8 | 3.5 | **61** | 지금은 보류 |
 
-결론적으로 1순위는 `The Smart Suburbanite` 방향으로 잡았다.
+평가 결과, 1순위는 `The Smart Suburbanite` 방향으로 잡았다.
 
 ## 왜 The Smart Suburbanite를 먼저 고르기로 했나
 
