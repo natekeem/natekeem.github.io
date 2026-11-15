@@ -192,6 +192,8 @@ agent.print_response('2026년 11월 오픈소스 AI 핵심 트렌드 3가지 요
 
 ![Letta 대화형 터미널 인터페이스와 추론 선택기 화면 (출처: letta-ai/letta-code, Apache-2.0)](/assets/img/posts/2026-11-15-git-trending-ai-weekly-06/05-letta-memory-terminal.png)
 
+![Letta 상태 보존 에이전트 터미널 실행 및 실시간 추론 동작 화면 (출처: letta-ai/letta-code, Apache-2.0)](/assets/img/posts/2026-11-15-git-trending-ai-weekly-06/05b-letta-interactive-agent-run.png)
+
 버클리 대학의 MemGPT 연구 프로젝트에서 스핀오프한 `Letta`는 LLM의 가장 근본적인 한계인 ‘컨텍스트 윈도우의 휘발성’을 컴퓨터 운영체제의 가상 메모리 기법으로 돌파한다. CPU가 빠른 L1/L2 캐시와 무한한 보조기억장치(SSD)를 페이징 기법으로 오가듯, `Letta` 에이전트는 프롬프트에 상주하는 핵심 메모리(Core Memory)와 벡터 데이터베이스에 영구 보관되는 아카이브 스토리지(Archival Memory)를 스스로 조작한다.
 
 에이전트는 대화 중 중요한 사실이나 사용자의 지시를 발견하면 시스템 도구를 호출해 자신의 코어 메모리를 갱신한다. 컨텍스트가 가득 차면 과거 대화를 요약해 아카이브로 밀어 넣고, 나중에 관련된 질문이 들어왔을 때만 검색해 다시 작업 공간으로 올린다. 덕분에 수개월 동안 이어진 대화에서도 사용자의 프로젝트 아키텍처나 코딩 선호도를 단 한 번도 잊지 않는다.
