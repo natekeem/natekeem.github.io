@@ -1,7 +1,7 @@
 ---
 title: "도구 호출 지옥 끝낸 클로드 코드 신기능"
 categories: [AI & Tech, Claude]
-tags: [AI, Dev Log, Architecture, CLI]
+tags: [AI, Dev Log, Web Dev, QA]
 description: "클로드 코드 v2.1.323에 추가된 실험적 기능 코드 모드(Code Mode)의 동작 원리와 실전 활용법을 정리했다. 반복적인 JSON 도구 호출 대신 스크립트로 도구를 묶어 실행해 토큰을 최대 82% 아끼는 방법을 살펴본다."
 date: 2026-11-15 10:30:00 +0900
 published: true
